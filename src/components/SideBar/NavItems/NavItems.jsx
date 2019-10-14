@@ -1,5 +1,6 @@
 import React from "react";
 import NavItem from "./NavItem/NavItem";
+import Logo from "../../Logo/Logo";
 import classes from "./NavItems.module.css";
 
 const pages = 
@@ -12,7 +13,8 @@ const NavItems = (props) =>
 {
     return(
         <div className = {classes.NavWrapper}>
-
+        <Logo />
+        <h2>The Announcer</h2>
         {
             pages.map( ( page,i ) => (
                         <NavItem 
@@ -22,8 +24,6 @@ const NavItems = (props) =>
                         </NavItem> 
                     ))
         }
-
-
         </div>
     )
 }

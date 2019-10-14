@@ -25,6 +25,7 @@ class Layout extends Component
             <div> 
                 <NavItems /> 
                 {this.props.children} 
+            
             </div>
 
                 

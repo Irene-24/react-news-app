@@ -1,0 +1,29 @@
+.NavItem
+{
+   background-color: var(--grey-brown);
+   color: #fff;
+   text-align: center;
+   border-left: 8px solid #fff;
+   margin-top: 10px;
+   text-transform: uppercase;
+   padding: 12px;
+   font-weight: bold;
+   letter-spacing: 0.06em;
+}
+
+.NavItem:nth-of-type(1)
+{
+    margin-top: 0px;
+}
+
+.NavItem a 
+{
+    display: block;
+    color: #fff;
+    text-decoration: none;
+}
+
+.NavItem a.Active
+{
+   color: var(--green);
+}

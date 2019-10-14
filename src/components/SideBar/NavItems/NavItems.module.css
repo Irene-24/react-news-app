@@ -1,0 +1,8 @@
+.NavWrapper
+{
+    width:30vh;
+    min-width: 300px;
+    max-width: 320px;
+    background-color: var(--green);
+    min-height: 100vh;
+}

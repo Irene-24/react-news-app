@@ -1,0 +1,60 @@
+.Header
+{
+    background: var(--green);    
+    height: 10vh;
+    min-height: 50px;
+    max-height: 60px;
+    position: relative;
+    z-index: 100;
+}
+
+.Hamburger
+{
+    padding: 12px;
+    position: absolute;
+    cursor:pointer;
+}
+
+.Hamburger > div
+{
+    background: #fff;
+    height:5px;
+    margin-top:3px;
+    border-radius: 10px
+}
+
+.Hamburger > div:nth-child(1)
+{
+    width: 38px;
+    margin-top:0;
+}
+
+.Hamburger > div:nth-child(2)
+{
+    width: 28px;
+}
+
+.Hamburger > div:nth-child(3)
+{
+    width: 18px;
+}
+
+
+.Logo 
+{
+    height: 80%;
+    padding:10px;
+    padding-top:5px;
+    width:26%;
+    margin: auto;
+    max-width: 78px;
+}
+
+@media (min-width:768px)
+{
+    .Header
+    {
+       display: none;
+    }
+
+}

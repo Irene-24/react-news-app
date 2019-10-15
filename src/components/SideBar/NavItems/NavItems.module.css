@@ -1,8 +1,81 @@
+@font-face
+{
+    font-family:'MIB';
+    src: local('MIB'), url("../../../assets/fonts/MIB.ttf") format('truetype');
+}
+
 .NavWrapper
 {
     width:30vh;
-    min-width: 300px;
+    min-width: 270px;
     max-width: 320px;
     background-color: var(--green);
     min-height: 100vh;
+    position: unset;
+}
+
+.SideLogo
+{
+    padding:12px;
+    color:#fff;
+    text-align:center;
+  
+}
+
+.SideLogo > div
+{
+    width:50%;
+}
+
+.SideLogo > h1
+{
+    font-family: 'MIB',Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+    letter-spacing: 0.08em;
+    font-size:1.4em;
+
+}
+
+.Social
+{   
+    text-align:center;
+    margin:10px auto 0;
+}
+
+.Social img
+{
+    width:50px;
+    padding:5px;
+}
+
+.Credit
+{
+  color:#fff;
+  font-size:1.2em;
+  padding: 10px;
+  text-align: center;
+}
+
+.Credit a
+{
+  font-size:inherit;
+}
+
+@media (max-width:767px)
+{
+    .NavWrapper
+    {
+        transform: translateX(-120%);
+        height: 70vh;
+        overflow-y: scroll;
+        position: fixed;
+        will-change: transform;
+        transition: transform 0.6s ease-in-out;
+    } 
+    
+    .NavWrapper.Visible
+    {
+        transform: translateX(0%);
+    }
+      
+
 }

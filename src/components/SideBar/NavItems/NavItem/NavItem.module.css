@@ -4,11 +4,10 @@
    color: #fff;
    text-align: center;
    border-left: 8px solid #fff;
-   margin-top: 10px;
+   margin-top: 8px;
    text-transform: uppercase;
-   padding: 12px;
    font-weight: bold;
-   letter-spacing: 0.06em;
+   letter-spacing: 0.04em;
 }
 
 .NavItem:nth-of-type(1)
@@ -19,8 +18,10 @@
 .NavItem a 
 {
     display: block;
-    color: #fff;
-    text-decoration: none;
+    color: #fff;    
+    padding: 12px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: bold;
 }
 
 .NavItem a.Active

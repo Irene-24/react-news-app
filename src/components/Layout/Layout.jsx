@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import NavItems from "../SideBar/NavItems/NavItems";
+import Sidebar from "../SideBar/SideBar";
 
 class Layout extends Component 
 {
@@ -23,7 +23,7 @@ class Layout extends Component
               
 
             <div> 
-                <NavItems /> 
+                <Sidebar/> 
                 {this.props.children} 
             
             </div>

@@ -1,0 +1,29 @@
+.Grid
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    margin-top: 20px;
+    grid-gap: 10px;
+}
+
+@media (min-width:993px)
+{
+    .Grid
+    {
+       margin-left:320px;
+    }
+
+}
+
+
+@media  (min-width:768px) and (max-width:991px)
+{
+    .Grid
+    {
+        padding-left: 5%;
+    }
+
+}
+
+
+

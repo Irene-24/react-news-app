@@ -6,17 +6,21 @@ import classes from "./Header.module.css";
 const header = (props) => {
     return (
 
-        <header className = {classes.Header}>
+        <header className={classes.Header}>
 
-        <div onClick = { props.toggle } className = {classes.Hamburger}>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+            <nav>
+                <div onClick={props.toggle} className={classes.Hamburger}>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
 
-        <div className = {classes.Logo}>
-            <Logo />
-        </div>
+                <div className={classes.Logo}>
+                    <Logo />
+                </div>
+            </nav>
+
+
 
 
         </header>

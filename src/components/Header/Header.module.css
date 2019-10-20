@@ -8,6 +8,14 @@
     z-index: 100;
 }
 
+.Header nav
+{
+    position: fixed;
+    width: 100vw;
+    z-index: 100;
+    background: var(--green);
+}
+
 .Hamburger
 {
     padding: 12px;
@@ -50,7 +58,7 @@
     max-width: 78px;
 }
 
-@media (min-width:768px)
+@media (min-width:993px)
 {
     .Header
     {

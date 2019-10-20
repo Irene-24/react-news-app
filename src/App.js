@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
+import LoadingPage from "./components/LoadingPage/LoadingPage";
 
 
 class App extends Component 
@@ -14,19 +15,21 @@ class App extends Component
     (
       <Switch>
       
-        <Route path="/home" render = { () => <h1 style={ {textAlign:"center",position:"absolute",top:"0",right:"30px"}}>HOME</h1> } />
-        <Route path="/health" render = { () => <h1 style={ {textAlign:"center",position:"absolute",top:"0",right:"30px"}}>HEALTH</h1> } />
-        <Route path="/finance" render = { () => <h1 style={ {textAlign:"center",position:"absolute",top:"0",right:"30px"}}>FINANCE</h1> } />
-        <Route path="/sports" render = { () => <h1 style={ {textAlign:"center",position:"absolute",top:"0",right:"30px"}}>SPORTS</h1> } />
-        <Route path="/technology" render = { () => <h1 style={ {textAlign:"center",position:"absolute",top:"0",right:"30px"}}>TECHNOLOGY</h1> } />
-        <Route path="/entertainment" render = { () => <h1 style={ {textAlign:"center",position:"absolute",top:"0",right:"30px"}}>ENTERTAINMENT</h1> } />
+        <Route path="/home" />
+        <Route path="/health" />
+        <Route path="/finance" />
+        <Route path="/sports" />
+        <Route path="/technology" /> 
+        <Route path="/entertainment" /> 
         <Redirect to ="/home" />
+
       </Switch>
     );
 
     return (
       <Layout>
        { routes }
+       <LoadingPage />
       </Layout>
     );
 

@@ -10,8 +10,11 @@
     min-width: 270px;
     max-width: 320px;
     background-color: var(--green);
-    min-height: 100vh;
-    position: unset;
+    z-index:80;
+    top:0;    
+    overflow-y: scroll;
+    height: 100vh;
+    position: fixed;
 }
 
 .SideLogo
@@ -60,14 +63,12 @@
   font-size:inherit;
 }
 
-@media (max-width:767px)
+@media (max-width:992px)
 {
     .NavWrapper
     {
         transform: translateX(-120%);
-        height: 70vh;
-        overflow-y: scroll;
-        position: fixed;
+        top:unset;
         will-change: transform;
         transition: transform 0.6s ease-in-out;
     } 
@@ -75,6 +76,11 @@
     .NavWrapper.Visible
     {
         transform: translateX(0%);
+    }
+
+    .Credit
+    {
+        margin-bottom: 10vh;
     }
       
 

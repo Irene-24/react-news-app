@@ -2,8 +2,7 @@
 {
    background-color: var(--grey-brown);
    color: #fff;
-   text-align: center;
-   border-left: 8px solid #fff;
+   text-align: center;  
    margin-top: 8px;
    text-transform: uppercase;
    font-weight: bold;
@@ -27,4 +26,5 @@
 .NavItem a.Active
 {
    color: var(--green);
+   border-left: 8px solid #fff;
 }

@@ -6,6 +6,15 @@ import LoadingPage from "./components/LoadingPage/LoadingPage";
 
 class App extends Component 
 {
+
+  // Testing Out
+  // componentDidMount()
+  // {
+  //   fetch('./dummyData.json')
+  //   .then( resp => resp.json() )
+  //   .then( resp => console.log(resp) )
+  //   .catch( err => console.log(err) )
+  // }
  
 
   render()

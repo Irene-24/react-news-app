@@ -1,0 +1,266 @@
+{
+    "status": "ok",
+    "totalResults": 38,
+    "articles": [
+        {
+            "source": {
+                "id": "cnn",
+                "name": "CNN"
+            },
+            "author": "Helen Regan and Ben Westcott, CNN",
+            "title": "Chinese state media issues dire warning as Hong Kong protests take dark turn - CNN",
+            "description": "The threat of violence hung over Hong Kong Thursday evening as thousands of student protesters prepared to face off with riot police, amid a continued occupation of several of the city's most prestigious universities.",
+            "url": "https://www.cnn.com/2019/11/14/asia/hong-kong-protests-universities-violence-intl-hnk/index.html",
+            "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/191114120530-hong-kong-arrow-cuhk-super-tease.jpg",
+            "publishedAt": "2019-11-14T07:40:00Z",
+            "content": "Hong Kong (CNN)The threat of violence hung over Hong Kong Thursday evening as thousands of student protesters prepared to face off with riot police, amid a continued occupation of several of the city's most prestigious universities. \r\nThe level of unrest and … [+6594 chars]"
+        },
+        {
+            "source": {
+                "id": "engadget",
+                "name": "Engadget"
+            },
+            "author": "Mariella Moon",
+            "title": "SpaceX successfully completes Crew Dragon engine tests without an explosion - Engadget",
+            "description": "SpaceX has completed a series of static fire tests for the Crew Dragon.",
+            "url": "https://www.engadget.com/2019/11/14/spacex-crew-dragon-engine-tests/",
+            "urlToImage": "https://o.aolcdn.com/images/dims?thumbnail=1200%2C630&quality=80&image_uri=https%3A%2F%2Fo.aolcdn.com%2Fimages%2Fdims%3Fcrop%3D1080%252C742%252C0%252C0%26quality%3D85%26format%3Djpg%26resize%3D1600%252C1099%26image_uri%3Dhttps%253A%252F%252Fs.yimg.com%252Fos%252Fcreatr-uploaded-images%252F2019-11%252Fc6160d60-0691-11ea-bfdc-d4cd26dd3a46%26client%3Da1acac3e1b3290917d92%26signature%3D3de2a9d8b2f38fe6e412fb621bdb13b1fc317357&client=amp-blogside-v2&signature=2acdd48c48e38ab0410d76b4ce7c7a390ed7102c",
+            "publishedAt": "2019-11-14T07:14:07Z",
+            "content": "The company conducted the tests near Landing Zone 1 on Cape Canaveral Air Force Station in Florida, starting with two one-second burns for two of the Crew Dragon's 16 Draco thrusters. Those thrusters will be used for maneuvering and attitude control, as well … [+1031 chars]"
+        },
+        {
+            "source": {
+                "id": "cnn",
+                "name": "CNN"
+            },
+            "author": "Analysis by Brian Stelter, CNN Business",
+            "title": "Fox's prime time stars are telling Trump that the impeachment hearings are a 'disaster' for Democrats - CNN",
+            "description": "I decided to mute all my other TVs and just watch Fox News on Wednesday night. I heard Stephanie Grisham say that \"today was a joke.\" I heard Donald Trump Jr. say \"it's insanity.\" I heard Jeff Sessions ask, \"Where's the beef?\"",
+            "url": "https://www.cnn.com/2019/11/14/media/impeachment-hearing-fox-news-reliable-sources/index.html",
+            "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/191114005136-sean-hannity-1026-super-tease.jpg",
+            "publishedAt": "2019-11-14T07:12:00Z",
+            "content": null
+        },
+        {
+            "source": {
+                "id": "fox-news",
+                "name": "Fox News"
+            },
+            "author": "Danielle Wallace",
+            "title": "Man convicted of fatally shooting store clerk in plot to steal beer put to death in Georgia - Fox News",
+            "description": "A man convicted of fatally shooting a convenience store clerk more than a decade ago as part of his plot to steal beer was put to death in Georgia Wednesday night despite last-minute pleas from his attorneys to carry out DNA testing they claim would exonerate…",
+            "url": "https://www.foxnews.com/us/georgia-death-row-inmate-execution-murder-store-clerk-dna",
+            "urlToImage": "https://static.foxnews.com/foxnews.com/content/uploads/2019/11/AP19289753518295.jpg",
+            "publishedAt": "2019-11-14T07:01:36Z",
+            "content": "A man convicted of fatally shooting a convenience store clerk 25 years ago as part of his plot to steal beer was put to death in Georgia Wednesday night despite last-minute pleas from his attorneys to carry out DNA testing they claim would exonerate the death… [+3969 chars]"
+        },
+        {
+            "source": {
+                "id": "cnn",
+                "name": "CNN"
+            },
+            "author": "Laura He, CNN Business",
+            "title": "Asian markets mixed after China data disappoints - CNN",
+            "description": "Asian stocks were mixed Thursday after China reported economic data that was weaker than expected.",
+            "url": "https://www.cnn.com/2019/11/13/investing/asian-market-latest/index.html",
+            "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/191113210830-asian-stocks-1113-super-tease.jpg",
+            "publishedAt": "2019-11-14T07:01:00Z",
+            "content": null
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Bbc.com"
+            },
+            "author": "https://www.facebook.com/bbcnews",
+            "title": "Bolivia crisis: Clashes as Morales supporters oppose interim rule - BBC News",
+            "description": "Supporters of Evo Morales clash with riot police as lawmakers vow to challenge Jeanine Áñez's rule.",
+            "url": "https://www.bbc.com/news/world-latin-america-50413981",
+            "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/CFCB/production/_109659135_c1e33175-f499-41df-a435-3e7639b4bef7.jpg",
+            "publishedAt": "2019-11-14T06:33:17Z",
+            "content": "Image copyrightAFPImage caption\r\n Clashes broke out between protesters and security forces in La Paz\r\nClashes have again broken out in Bolivia as supporters of former President Evo Morales oppose the rule of the new interim leader. \r\nOpposition senator Jeanin… [+5134 chars]"
+        },
+        {
+            "source": {
+                "id": "techcrunch",
+                "name": "TechCrunch"
+            },
+            "author": "Brian Heater",
+            "title": "Motorola throws back to the future with a foldable Razr reboot - TechCrunch",
+            "description": "The rebirth of the Razr has been rumored for several months now. And honestly, such a product is a bit of a no-brainer. The Lenovo-owned company is embracing the burgeoning (if sputtering) world of foldables with the return of one of its most iconic models. W…",
+            "url": "http://techcrunch.com/2019/11/13/motorola-throws-back-to-the-future-with-a-foldable-razr-reboot/",
+            "urlToImage": "https://techcrunch.com/wp-content/uploads/2019/11/HE6A2264_E.jpg?w=600",
+            "publishedAt": "2019-11-14T06:08:06Z",
+            "content": "The rebirth of the Razr has been rumored for several months now. And honestly, such a product is a bit of a no-brainer. The Lenovo-owned company is embracing the burgeoning (if sputtering) world of foldables with the return of one of its most iconic models.\r\n… [+2233 chars]"
+        },
+        {
+            "source": {
+                "id": "reuters",
+                "name": "Reuters"
+            },
+            "author": "Edward Taylor",
+            "title": "German automation talent powers Musk's battery move to Europe - Reuters",
+            "description": "To unclog bottlenecks last year at his Tesla Inc plant in California, Elon Musk flew in six planeloads of new robots and equipment from Germany to speed up battery production for its Model 3.",
+            "url": "https://www.reuters.com/article/us-tesla-gigafactory-germany-strategy-idUSKBN1XO0LO",
+            "urlToImage": "https://s4.reutersmedia.net/resources/r/?m=02&d=20191114&t=2&i=1452092136&w=1200&r=LYNXMPEFAD0GV",
+            "publishedAt": "2019-11-14T06:08:00Z",
+            "content": "FRANKFURT (Reuters) - To unclog bottlenecks last year at his Tesla Inc (TSLA.O) plant in California, Elon Musk flew in six planeloads of new robots and equipment from Germany to speed up battery production for its Model 3. \r\nNow the Tesla CEO is trying to tap… [+4369 chars]"
+        },
+        {
+            "source": {
+                "id": "reuters",
+                "name": "Reuters"
+            },
+            "author": null,
+            "title": "China completes lander test for first Mars mission in 2020 - msnNOW",
+            "description": "China completes lander test for first Mars mission in 2020",
+            "url": "http://www.reuters.com/article/us-space-exploration-china-mars-idUSKBN1XO0IQ?utm_source=34553&amp;utm_medium=partner",
+            "urlToImage": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBWJTEh.img?h=630&w=1200&m=6&q=60&o=t&l=f&f=jpg",
+            "publishedAt": "2019-11-14T05:40:00Z",
+            "content": "Lander is hanged for a hovering-and-obstacle avoidance test for China's Mars mission at a test facility in Huailai\r\nLander is hanged for a hovering-and-obstacle avoidance test for China's Mars mission at a test facility in Huailai\r\nLander is seen during a hov… [+2013 chars]"
+        },
+        {
+            "source": {
+                "id": "cnn",
+                "name": "CNN"
+            },
+            "author": "Frank Pallotta, CNN Business",
+            "title": "Late night takes on the first day of impeachment hearings - CNN",
+            "description": "\"It's finally here.\" That's how CBS' Stephen Colbert kicked off \"The Late Show\" on Wednesday night before delving into the biggest story of the day: the first public impeachment hearings of President Trump.",
+            "url": "https://www.cnn.com/2019/11/14/media/late-night-impeachment-hearings/index.html",
+            "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/191114002355-jimmy-kimmel-1112-restricted-super-tease.jpg",
+            "publishedAt": "2019-11-14T05:36:00Z",
+            "content": null
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Pitchfork.com"
+            },
+            "author": "Madison Bloom",
+            "title": "Watch Kacey Musgraves and Willie Nelson Sing “Rainbow Connection” at the 2019 CMA Awards - Pitchfork",
+            "description": "The country stars sang a duet of the Kermit classic live at country’s biggest night",
+            "url": "https://pitchfork.com/news/watch-kacey-musgraves-and-willie-nelson-sing-rainbow-connection-at-the-2019-cma-awards/",
+            "urlToImage": "https://media.pitchfork.com/photos/5dccd22d635f2600084304f3/2:1/w_790/Kacey-Musgraves-Willie-Nelson.jpg",
+            "publishedAt": "2019-11-14T04:05:00Z",
+            "content": "Willie Nelson and Kacey Musgraves teamed up for a duet at the 2019 CMA Awards tonight in Nashville. They took to the stage at Bridgestone Arena for a rendition of the iconic Muppet Movie song Rainbow Connection. Watch it happen below.\r\nThe two artists have co… [+523 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Nypost.com"
+            },
+            "author": "Ben Feuerherd",
+            "title": "Colorado officers who shot and killed fleeing teen won't be charged - New York Post ",
+            "description": "The Colorado police officers who shot and killed a teen this summer while he was running away from them will not be charged with a crime, a report said Wednesday. A grand jury in Colorado Springs u…",
+            "url": "https://nypost.com/2019/11/13/colorado-officers-who-shot-and-killed-fleeing-teen-wont-be-charged/",
+            "urlToImage": "https://thenypost.files.wordpress.com/2019/11/devon-bailey-shooting.jpg?quality=90&strip=all&w=1200",
+            "publishedAt": "2019-11-14T03:46:00Z",
+            "content": "The Colorado police officers who shot and killed a teen this summer while he was running away from them will not be charged with a crime, a report said Wednesday.\r\nA grand jury in Colorado Springs unanimously concluded that cops were justified in killing 19-y… [+1128 chars]"
+        },
+        {
+            "source": {
+                "id": "cnbc",
+                "name": "CNBC"
+            },
+            "author": "Reuters",
+            "title": "China's economy grinds lower as October indicators miss forecasts - CNBC",
+            "description": "Industrial production rose 4.7% year-on-year in October, data from the National Bureau of Statistics released on Thursday showed, below the median forecast of 5.4% growth in a Reuters poll.",
+            "url": "https://www.cnbc.com/2019/11/14/chinas-economy-grinds-lower-as-october-indicators-miss-forecasts.html",
+            "urlToImage": "https://image.cnbcfm.com/api/v1/image/105857756-1555525621514gettyimages-955834372.jpeg?v=1573701594",
+            "publishedAt": "2019-11-14T03:21:00Z",
+            "content": "China's industrial output grew significantly slower than expected in October, as weakness in global and domestic demand and the drawn-out Sino-U.S. trade war weighed on activity in the world's second-largest economy.\r\nIndustrial production rose 4.7% year-on-y… [+2831 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Triblive.com"
+            },
+            "author": "Chris Adamski",
+            "title": "Will the Steelers sign Colin Kaepernick? The bookmakers think it's definitely possible - TribLIVE",
+            "description": "The NFL has arranged for a private workout for teams to evaluate Colin Kaepernick and his possible readiness to return to the league. If that happens, there are some who believe it could be the Pittsburgh Steelers who facilitate it. Kaepernick will work out f…",
+            "url": "https://triblive.com/sports/will-the-steelers-sign-colin-kaepernick-the-bookmakers-think-its-definitely-possible/",
+            "urlToImage": "https://triblive.com/wp-content/uploads/2019/11/1941252_web1_AP_18338809912260.jpg",
+            "publishedAt": "2019-11-14T03:15:13Z",
+            "content": "You are solely responsible for your comments and by using TribLive.com you agree to our\r\nTerms of Service.\r\nWe moderate comments. Our goal is to provide substantive commentary for a general readership. By screening submissions, we provide a space where reader… [+1626 chars]"
+        },
+        {
+            "source": {
+                "id": "fox-news",
+                "name": "Fox News"
+            },
+            "author": "Julius Young",
+            "title": "Miranda Lambert applauds Carrie Underwood's ‘Drinking Alone’ performance at 2019 CMAs - Fox News",
+            "description": "Miranda Lambert couldn’t contain her excitement after Carrie Underwood wrapped up her performance of at the 2019 CMAs.",
+            "url": "https://www.foxnews.com/entertainment/miranda-lambert-carrie-underwood-drinking-alone-performance-2019-cma",
+            "urlToImage": "https://static.foxnews.com/foxnews.com/content/uploads/2019/11/Carrie-Underwood-CMAs-2019.jpg",
+            "publishedAt": "2019-11-14T03:14:44Z",
+            "content": "Miranda Lambert couldn’t contain her excitement after Carrie Underwood wrapped up her performance of at the 2019 CMAs.\r\nPulling double duty as she often does – the host and performer, donning a black sequin bodysuit featuring sheer lace detailing and a black … [+3399 chars]"
+        },
+        {
+            "source": {
+                "id": "nbc-news",
+                "name": "NBC News"
+            },
+            "author": "Alex Johnson",
+            "title": "Federal appeals court rejects Trump's effort to shield his taxes - NBC News",
+            "description": "President Donald Trump's attorney promised to go to the Supreme Court after a federal appeals court let stand a ruling that he must turn over his tax records.",
+            "url": "https://www.nbcnews.com/politics/donald-trump/federal-appeals-court-rejects-trump-s-effort-shield-his-taxes-n1081976",
+            "urlToImage": "https://media4.s-nbcnews.com/j/newscms/2019_46/3100126/191113-donald-trump-ew-907p_6d4c60ba8897d5eb797e4b6aeebc72af.nbcnews-fp-1200-630.jpg",
+            "publishedAt": "2019-11-14T02:51:00Z",
+            "content": "A federal appeals court on Wednesday let stand a ruling allowing lawmakers to subpoena President Donald Trump's accountants for years of his financial records. A lawyer for the president promised to appeal to the Supreme Court.\r\nOn an 8-3 vote, the U.S. Court… [+2395 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Oann.com"
+            },
+            "author": null,
+            "title": "Nike stops selling products on Amazon - One America News Network",
+            "description": "Breaking News, Latest News and Current News from OANN.com. Breaking news and video. Latest Current News: U.S., World, Entertainment, Health, Business, Technology, Politics, Sports.",
+            "url": "https://www.oann.com/nike-stops-selling-products-on-amazon/",
+            "urlToImage": null,
+            "publishedAt": "2019-11-14T02:29:16Z",
+            "content": "FILE – In this Jan. 13, 2019, file photo Portland Trail Blazers forward Zach Collins (33) wears a pair of Nike Hyperdunks in the first half of an NBA basketball game in Denver. (AP Photo/David Zalubowski, File)\r\nOAN NewsroomUPDATED 6:25 PM PT Wednesday, Novem… [+848 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Deadline.com"
+            },
+            "author": "Bruce Haring, Bruce Haring",
+            "title": "Disney+ Content Warnings On Sensitive Depictions In Films Causes A Stir Among Subscribers - Deadline",
+            "description": "The new Disney+ is also Disney-, as the studio’s streaming service apparently is being cautious about what it will showcase, keeping some materials in the vault while warning of sensitive con…",
+            "url": "https://deadline.com/2019/11/disney-content-warnings-in-films-causes-stir-1202785527/",
+            "urlToImage": "https://pmcdeadline2.files.wordpress.com/2019/03/dumbo-new.jpg?w=1000",
+            "publishedAt": "2019-11-14T02:22:00Z",
+            "content": "The new Disney+ is also Disney-, as the studio’s streaming service apparently is being cautious about what it will showcase, keeping some materials in the vault while warning of sensitive content in other cases.\r\nThe new subscription service debuted Tuesday a… [+2324 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Bgr.com"
+            },
+            "author": "Mike Wehner",
+            "title": "Nobody knows what’s creating oxygen on Mars - BGR",
+            "description": "NASA’s Curiosity rover returned some seriously surprising data to Earth earlier this year, with readings of elevated methane levels that were hard to explain. Subsequent tests attempted to pi…",
+            "url": "https://bgr.com/2019/11/13/mars-oxygen-curiosity-rover-tests/",
+            "urlToImage": "https://boygeniusreport.files.wordpress.com/2019/05/capture-26.jpg?quality=98&strip=all",
+            "publishedAt": "2019-11-14T02:14:00Z",
+            "content": "NASA’s Curiosity rover returned some seriously surprising data to Earth earlier this year, with readings of elevated methane levels that were hard to explain. Subsequent tests attempted to pin down the cause of the higher-than-expected readings but scientists… [+2467 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "247sports.com"
+            },
+            "author": "Steve Helwagen",
+            "title": "Buckeyes' fast start, hot shooting too much for No. 10 Villanova - 247Sports",
+            "description": "Ohio State had five players in double figures in 76-51 rout of No. 10 Villanova.",
+            "url": "https://247sports.com/college/ohio-state/Article/Ohio-State-Buckeyes-mens-basketball-routs-No-10-Villanova-76-51-138540550/",
+            "urlToImage": "https://s3media.247sports.com/Uploads/Assets/624/517/9517624.jpg?fit=bounds&crop=1200:630,offset-y0.50&width=1200&height=630",
+            "publishedAt": "2019-11-14T02:10:18Z",
+            "content": "I\r\n(Photo: Steve Helwagen, 247Sports)\r\nOhio State welcomed a national top-10 nonconference opponent in to Value City Arena for the first time in seven years on Wednesday night.\r\nAnd the Buckeyes wasted no time in showing how rude a host they could be. OSU’s D… [+10464 chars]"
+        }
+    ]
+}

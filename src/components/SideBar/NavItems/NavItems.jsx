@@ -33,8 +33,10 @@ const NavItems = (props) => {
             }
 
             <div className={classes.Social}>
-                <img src={Github}  alt="logo of github"/>           
-                <img src={Twitter} alt="logo of twitter" />
+                <a href="http://" target="_blank" rel="noopener noreferrer">  <img src={Github}  alt="logo of github"/> </a>
+                <a href="http://" target="_blank" rel="noopener noreferrer">  <img src={Twitter} alt="logo of twitter" /></a>
+                        
+              
             </div>
 
             <p className={classes.Credit} >This site was built using the <a href="https://newsapi.org/" target="_blank" rel="noopener noreferrer">News API</a> </p>

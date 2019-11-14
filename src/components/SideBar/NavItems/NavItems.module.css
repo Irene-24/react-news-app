@@ -85,3 +85,13 @@
       
 
 }
+
+
+@media (min-width:1200px)
+{
+    .NavWrapper
+    {
+        overflow-y: unset;
+    } 
+
+}

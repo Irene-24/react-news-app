@@ -21,10 +21,23 @@
     padding: 12px;
     font-family: 'Nunito Sans', sans-serif;
     font-weight: bold;
+    transition: 0.5s ease transform;
+    will-change: transform;
 }
+
+.NavItem a:hover 
+{
+    transform: scale(1.1);
+}
+
 
 .NavItem a.Active
 {
    color: var(--green);
    border-left: 8px solid #fff;
+}
+
+.NavItem a.Active:hover 
+{
+    transform: none;
 }

@@ -18,7 +18,7 @@ const rootReducer = combineReducers(
 
 const appStore = createStore(rootReducer,composeEnhancers( applyMiddleware(thunk) ));
 
-const app = (
+const newsApp = (
     <Provider store={appStore}>
         <Router>
             <App />
@@ -27,7 +27,7 @@ const app = (
 );
 
 
-ReactDOM.render(app, document.getElementById('root'));
+ReactDOM.render(newsApp, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

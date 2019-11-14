@@ -21,7 +21,7 @@
     padding: 12px;
     font-family: 'Nunito Sans', sans-serif;
     font-weight: bold;
-    transition: 0.5s ease transform;
+    transition: 0.2s ease transform;
     will-change: transform;
 }
 

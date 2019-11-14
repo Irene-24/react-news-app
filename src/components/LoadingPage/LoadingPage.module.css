@@ -2,18 +2,25 @@
 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    margin-top: 20px;
+    margin-top: 60px;
     grid-gap: 10px;
+    
 }
 
-@media (min-width:993px)
+.Search
 {
-    .Grid
-    {
-       margin-left:320px;
-    }
-
+    border-bottom: 1px solid var(--green) ;
+    min-width:280px;
+    width:30vw;
+    max-width:300px;
+    position: fixed;
+    right:50%;
+    top: 58px;
+    transform: translateX(50%);
+    font-size: 20px ;
+    padding: 8px 40px;
 }
+
 
 
 @media  (min-width:768px) and (max-width:991px)
@@ -24,6 +31,31 @@
     }
 
 }
+
+@media  (min-width:768px)
+{
+    .Search
+    {        
+        transform: unset;
+        right:15px;   
+        top: 50px; 
+    }
+}
+
+@media (min-width:993px)
+{
+    .Grid
+    {
+       margin-left:320px;
+    }
+
+    .Search
+    {        
+        top: 0px; 
+    }
+
+}
+
 
 
 

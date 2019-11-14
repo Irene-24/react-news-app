@@ -5,17 +5,23 @@ import classes from "./LoadingPage.module.css";
 const LoadingPage = () => {
     const cards = [];
 
-    for (let i = 0; i < 20 ; i++) 
+    for (let i = 0; i < 20; i++) 
     {
-        cards.push( <DummyCard key={i} /> ) ;       
+        cards.push(<DummyCard key={i} />);
     }
-    
+
     return (
-        <div className={classes.Grid}>
+        <>
 
-            {cards}
+            <div className={classes.Search}> | </div>
+            <div className={classes.Grid}>
 
-        </div>
+
+                {cards}
+
+            </div>
+        </>
+
     )
 }
 

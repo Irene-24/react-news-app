@@ -19,8 +19,8 @@
     transform: translateX(50%);
     font-size: 20px ;
     padding: 8px 40px;
+    will-change: transform;
 }
-
 
 
 @media  (min-width:768px) and (max-width:991px)

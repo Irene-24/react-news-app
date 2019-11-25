@@ -4,7 +4,7 @@ import classes from "./NewsPage.module.css";
 
 const newsPage = (props) =>
 {
-  const header = props.keyword ? <h1 className={classes.Title}>{props.title} <i className={classes.Keyword}>"{props.keyword}"</i> </h1> : <h1 className={classes.Title}>{props.title} News</h1>
+  const header = props.keyword ? <h1 className={classes.Title}>{props.title} <i className={classes.Keyword}>"{props.keyword}"</i> </h1> : <h1 className={classes.Title}>{props.title} { props.isHome ? "Stories" : "News"}</h1>
   const articles = props.articles.length > 0 ? [...props.articles].map( (article,i) => <News key={i} news={article} /> ) : null;
   return (
     <>

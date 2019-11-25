@@ -1,19 +1,28 @@
 .Search
 {
-    border-bottom: 1px solid var(--green) ;
-    min-width:280px;
+    border: 1px solid var(--green) ;    
+    border-radius: 50px;    
     width:30vw;
-    max-width:300px;
+    min-width:280px;
+    max-width:350px;
     position: fixed;
     right:50%;
-    top: 58px;
+    top: 64px;
     transform: translateX(50%);
     font-size: 20px ;
-    padding: 8px 4px 8px 40px;
+    padding: 8px 4px 8px 45px;
     background: #fff;
     z-index:60;
 }
 
+
+.Icon
+{
+    position: absolute;
+    left:10px;
+    width:24px;
+    cursor:pointer;
+}
 
 .Search input
 {
@@ -31,6 +40,9 @@
         transform: unset;
         right:15px;   
         top: 60px; 
+        border: none;
+        border-radius: 0px;
+        border-bottom: 1px solid var(--green) ;
     }
 }
 

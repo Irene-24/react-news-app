@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
+import searchIcon from "../../assets/img/magnifier.svg";
 import classes from "./SearchBar.module.css";
+
 
 class Search extends Component
 {
@@ -10,29 +12,27 @@ class Search extends Component
     }
 
     
-  search = (event) =>
+
+  inputHandler = (event) =>
   {
-     const keyword = event.target.value.trim();
-     console.log(keyword);
      
+        this.setState( { keyword : event.target.value.trim()  } );
   }
 
-  saveTyped = (event) =>
-  {
-     
-        this.setState( { keyword : event.target.value  } );
-  }
 
   search = (event) =>
   {
     if(event.keyCode === 13)
-    {     
-      
-      //call a function in app.js to handle the actual redirect
-      //that function will do the actual fetching of data
-      this.props.search(this.state.keyword);
-      //set this in redux, use in newspage to display
+    { 
+      this.lookup();
+    }
+  }
 
+  lookup = () =>
+  {
+    if(this.state.keyword !== "")
+    {
+      this.props.search(this.state.keyword);
       this.props.history.push('/search');
     }
   }
@@ -41,8 +41,9 @@ class Search extends Component
     render()
     {
         return (
-            <div className={classes.Search}>
-               <input type="text"  value={this.state.keyword} placeholder="Search keyword here..." onChange={this.saveTyped} onKeyUp={this.search} />
+            <div onClick={this.lookup} className={classes.Search}>
+               <img className={classes.Icon} src={searchIcon} alt="magnifier icon"/>
+               <input type="text"  value={this.state.keyword} placeholder="Search keyword here..." onChange={this.inputHandler} onKeyUp={this.search} />
             </div>
         );
     }

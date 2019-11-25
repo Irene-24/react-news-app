@@ -5,7 +5,7 @@ import classes from "./NavItem.module.css";
 const NavItem = (props) => {
    
     return (
-        <div className={classes.NavItem}>
+        <div onClick = {props.toggle} className={classes.NavItem}>
             <NavLink
                 to={ props.dest  }
                 exact={props.exact}

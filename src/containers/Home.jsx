@@ -45,7 +45,7 @@ class Home extends Component
     {
         return (
           
-                <NewsPage title="Top" articles={this.state.articles} />
+                <NewsPage title="Top" articles={this.state.articles} isHome />
         );
     }
 

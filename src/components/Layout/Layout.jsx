@@ -22,11 +22,11 @@ class Layout extends Component
         return(
               
 
-            <div> 
+            <> 
                 <Sidebar/> 
                 {this.props.children} 
             
-            </div>
+            </>
 
                 
             )

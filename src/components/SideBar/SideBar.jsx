@@ -24,7 +24,7 @@ class Sidebar extends Component {
         return (
             <>
                 <Header toggle = { this.toggleSideBarVisibility } />
-                <NavItems isOpen = { this.state.isSideBarVisible } />
+                <NavItems toggle = { this.toggleSideBarVisibility } isOpen = { this.state.isSideBarVisible } />
             </>
 
         );

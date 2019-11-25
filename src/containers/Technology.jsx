@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import NewsPage from "../components/NewsPage/NewsPage";
 
-class Sports extends Component
+class Technology extends Component
 {
     //wil remove and use redux when i set it up
     state = 
@@ -45,10 +45,10 @@ class Sports extends Component
     {
         return (
           
-                <NewsPage title="Sports" articles={this.state.articles} />
+                <NewsPage title="Technology" articles={this.state.articles} />
         );
     }
 
 }
 
-export default Sports;
+export default Technology;

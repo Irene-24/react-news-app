@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Wrapper from "../../hoc/Wrapper";
 import Header from "../Header/Header";
 import NavItems from "./NavItems/NavItems";
 
@@ -23,10 +22,10 @@ class Sidebar extends Component {
     render() {
 
         return (
-            <Wrapper>
+            <>
                 <Header toggle = { this.toggleSideBarVisibility } />
                 <NavItems isOpen = { this.state.isSideBarVisible } />
-            </Wrapper>
+            </>
 
         );
 

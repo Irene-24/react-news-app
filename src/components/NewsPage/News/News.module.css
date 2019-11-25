@@ -6,7 +6,8 @@
     border-radius: 4px;
     overflow:hidden;
     margin: 10px 0;
-    padding-bottom: 30px;
+    padding-bottom: 50px;    
+    position: relative;
 }
 
 .ImgDiv
@@ -28,6 +29,15 @@
     padding:10px;
 }
 
+.Tags
+{
+    display: flex;
+    justify-content: space-between ;
+    align-content: space-between;
+    flex-wrap:wrap;
+
+}
+
 .Publisher,.Date
 {
     background: var(--green);
@@ -36,6 +46,25 @@
     padding:4px;
     display:inline-block;
     text-align: center;
+}
+
+.Title
+{
+    font-weight:500;
+    margin-top:10px;
+}
+
+.ReadMore
+{
+    position: absolute;
+    right:10px;
+    bottom:12px;
+    background: var(--grey-brown);
+    color:#000;
+    border-radius: 5px;    
+    padding:5px 10px;    
+    font-size:0.8rem;
+
 }
 
 

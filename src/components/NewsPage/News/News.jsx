@@ -10,7 +10,7 @@ const news = (props) =>
                 <img src={props.news.urlToImage} alt="news headline pic"/>
             </div>
             <div className={classes.NewsBody}>
-                <div className="Tags">
+                <div className={classes.Tags}>
                 <span className={classes.Publisher}>
                     {props.news.src}
                 </span>

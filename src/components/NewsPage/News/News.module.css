@@ -67,6 +67,11 @@
 
 }
 
+.ReadMore i
+{
+    font-size: inherit;
+}
+
 
 @media (max-width:767px)
 {

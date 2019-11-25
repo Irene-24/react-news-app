@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect } from "react-router-dom";
-import Sports from "./containers/Sports";
-import SearchPage from "./containers/SearchPage";
+import asyncComponent from "./hoc/asyncComponent";
 import Layout from "./components/Layout/Layout";
 import LoadingPage from "./components/LoadingPage/LoadingPage";
 import SearchBar from "./components/SearchBar/SearchBar";
 
+const asyncSearchPage = asyncComponent( () => import("./containers/SearchPage") );
+const asyncSports = asyncComponent( () => import('./containers/Sports') );
+const asyncHome = asyncComponent( () => import("./containers/Home") );
+const asyncHealth = asyncComponent( () => import('./containers/Health') );
+const asyncTechnology = asyncComponent( () => import("./containers/Technology") );
+const asyncFinance = asyncComponent( () => import('./containers/Finance') );
+const asyncEntertainment = asyncComponent( () => import("./containers/Entertainment") );
 
 class App extends Component 
 {
@@ -38,13 +44,13 @@ class App extends Component
     (
       <Switch>
       
-        <Route path="/home" component={Sports}/>
-        <Route path="/health" component={Sports} />
-        <Route path="/finance" component={Sports} />
-        <Route path="/sports" component={Sports} />
-        <Route path="/technology" component={Sports} /> 
-        <Route path="/entertainment" component={Sports} />
-        <Route path="/search" component={SearchPage} /> 
+        <Route path="/home" component={asyncSports}/>
+        <Route path="/health" component={asyncSports} />
+        <Route path="/finance" component={asyncSports} />
+        <Route path="/sports" component={asyncSports} />
+        <Route path="/technology" component={asyncSports} /> 
+        <Route path="/entertainment" component={asyncSports} />
+        <Route path="/search" component={asyncSearchPage} /> 
         <Redirect to ="/home" />
 
       </Switch>

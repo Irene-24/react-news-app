@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect } from "react-router-dom";
+import Sports from "./containers/Sports";
+import SearchPage from "./containers/SearchPage";
 import Layout from "./components/Layout/Layout";
 import LoadingPage from "./components/LoadingPage/LoadingPage";
 import SearchBar from "./components/SearchBar/SearchBar";
-import SearchPage from "./containers/SearchPage";
-import NewsPage from './components/NewsPage/NewsPage';
 
 
 class App extends Component 
@@ -24,6 +24,11 @@ class App extends Component
   //   .catch( err => console.log(err) )
   // }
 
+  searchHandler= (keyword) =>
+  {
+     console.log(keyword);
+     
+  }
  
 
   render()
@@ -33,12 +38,12 @@ class App extends Component
     (
       <Switch>
       
-        <Route path="/home" component={NewsPage}/>
-        <Route path="/health" component={NewsPage} />
-        <Route path="/finance" component={NewsPage} />
-        <Route path="/sports" component={NewsPage} />
-        <Route path="/technology" component={NewsPage} /> 
-        <Route path="/entertainment" component={NewsPage} />
+        <Route path="/home" component={Sports}/>
+        <Route path="/health" component={Sports} />
+        <Route path="/finance" component={Sports} />
+        <Route path="/sports" component={Sports} />
+        <Route path="/technology" component={Sports} /> 
+        <Route path="/entertainment" component={Sports} />
         <Route path="/search" component={SearchPage} /> 
         <Redirect to ="/home" />
 
@@ -47,8 +52,7 @@ class App extends Component
 
     let view = (
       <Layout>
-       { routes }
-       <SearchBar />
+       <SearchBar search={this.searchHandler} />
        <LoadingPage />
       </Layout>
     );;
@@ -58,7 +62,7 @@ class App extends Component
       (
         <Layout>
          { routes }
-         <SearchBar />         
+         <SearchBar search={this.searchHandler} />         
         </Layout>
       );
     }

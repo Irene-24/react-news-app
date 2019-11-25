@@ -1,0 +1,44 @@
+.Grid
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    margin-top: 40px;
+    grid-gap: 10px;
+    
+}
+
+.Title
+{
+   margin-top:70px;
+   color:var(--green);
+   font-size:1.5rem;
+   text-shadow: 0px 4px 4px rgba(11, 87, 91, 0.25);
+}
+
+.Keyword
+{
+    font-size:inherit;
+    font-weight: 400;
+}
+
+@media  (min-width:768px) and (max-width:991px)
+{
+    .Grid,.Title
+    {
+        padding-left: 5%;
+    }
+
+}
+
+@media (min-width:993px)
+{
+    .Grid,.Title
+    {
+       margin-left:320px;
+    }
+
+}
+
+
+
+

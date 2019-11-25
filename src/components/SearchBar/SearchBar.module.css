@@ -9,8 +9,20 @@
     top: 58px;
     transform: translateX(50%);
     font-size: 20px ;
-    padding: 8px 40px;
+    padding: 8px 4px 8px 40px;
+    background: #fff;
+    z-index:60;
 }
+
+
+.Search input
+{
+    border: 0;
+    display: block;
+    outline: none;
+}
+
+
 
 @media  (min-width:768px)
 {

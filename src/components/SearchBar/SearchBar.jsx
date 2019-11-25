@@ -21,16 +21,18 @@ class Search extends Component
   {
      
         this.setState( { keyword : event.target.value  } );
-        console.log(1234);
   }
 
   search = (event) =>
   {
     if(event.keyCode === 13)
     {     
-      console.log('enter');
+      
       //call a function in app.js to handle the actual redirect
       //that function will do the actual fetching of data
+      this.props.search(this.state.keyword);
+      //set this in redux, use in newspage to display
+
       this.props.history.push('/search');
     }
   }

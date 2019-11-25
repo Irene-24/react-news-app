@@ -7,22 +7,6 @@
     
 }
 
-.Search
-{
-    border-bottom: 1px solid var(--green) ;
-    min-width:280px;
-    width:30vw;
-    max-width:300px;
-    position: fixed;
-    right:50%;
-    top: 58px;
-    transform: translateX(50%);
-    font-size: 20px ;
-    padding: 8px 40px;
-    will-change: transform;
-}
-
-
 @media  (min-width:768px) and (max-width:991px)
 {
     .Grid
@@ -32,26 +16,11 @@
 
 }
 
-@media  (min-width:768px)
-{
-    .Search
-    {        
-        transform: unset;
-        right:15px;   
-        top: 50px; 
-    }
-}
-
 @media (min-width:993px)
 {
     .Grid
     {
        margin-left:320px;
-    }
-
-    .Search
-    {        
-        top: 0px; 
     }
 
 }

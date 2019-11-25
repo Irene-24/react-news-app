@@ -13,7 +13,6 @@ const LoadingPage = () => {
     return (
         <>
 
-            <div className={classes.Search}> | </div>
             <div className={classes.Grid}>
 
 

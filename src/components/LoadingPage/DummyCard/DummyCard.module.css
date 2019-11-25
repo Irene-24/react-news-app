@@ -12,7 +12,7 @@
 
 .CardPic
 {
-    background: #2a7e4e;
+    background: var(--light-green);
     height: 150px;
 }
 
@@ -27,7 +27,7 @@
     border-radius: 4px;
     height:20px;
     display: inline-block;
-    background: #2a7e4e;
+    background:var(--light-green) ;
 }
 
 .Author

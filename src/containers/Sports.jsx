@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import NewsPage from "../components/NewsPage/NewsPage";
 
-class SearchPage extends Component
+class Sports extends Component
 {
+    //wil remove and use redux when i set it up
     state = 
     {
-        count: 5,
-        keyword:"meat",
         articles : 
         [
             {
@@ -14,7 +13,7 @@ class SearchPage extends Component
                 url: '/',
                 urlToImage:'/',
                 src:'The Daily Bugle',
-                publishedAt:"2019-11-13T07:40:00Z"
+                publishedAt:"2019-11-03T07:40:00Z"
             },
             {
                 title: "Chinese state media issues dire warning as Hong Kong protests take dark turn - CNN",
@@ -39,21 +38,17 @@ class SearchPage extends Component
                 publishedAt:"2019-11-14T07:40:00Z"
             }
         ]
+        
+        
     }
-    //x =  number of results
-    //meat will be eplaced by query/keyword set in redux store
-
     render()
     {
         return (
-            <>
-               
-                <NewsPage title={`${this.state.count} results found for`} keyword ={ this.state.keyword }articles={this.state.articles} />
-             
-            </>
+          
+                <NewsPage title="Sports" articles={this.state.articles} />
         );
     }
 
 }
 
-export default SearchPage;
+export default Sports;

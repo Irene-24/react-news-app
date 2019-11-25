@@ -12,7 +12,7 @@ const news = (props) =>
             <div className={classes.NewsBody}>
                 <div className={classes.Tags}>
                 <span className={classes.Publisher}>
-                    {props.news.src}
+                    {props.news.source.name}
                 </span>
                 <span className={classes.Date}>
                     { formatDate(props.news.publishedAt)}
@@ -20,7 +20,7 @@ const news = (props) =>
                 </div>
                 
                 <p className={classes.Title}>{stripSrc(props.news.title)}</p>
-                <a href={props.news.url} className={classes.ReadMore}>Read More &nbsp;&nbsp; <i className="fas fa-external-link-alt"></i> </a>
+                <a target="_blank" href={props.news.url} className={classes.ReadMore}>Read More &nbsp;&nbsp; <i className="fas fa-external-link-alt"></i> </a>
             </div>
         </div>
     )

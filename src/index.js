@@ -4,6 +4,8 @@ import { BrowserRouter as Router } from "react-router-dom";
 import {applyMiddleware , compose , combineReducers , createStore } from 'redux';
 import { Provider } from "react-redux";
 import thunk from 'redux-thunk';
+
+import articleReducer from "./store/reducers/articles";
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
@@ -12,7 +14,7 @@ const composeEnhancers = process.env.NODE_ENV === "development" ? window.__REDUX
 
 const rootReducer = combineReducers(
     {
-       
+       articles:articleReducer
 
     }
 );

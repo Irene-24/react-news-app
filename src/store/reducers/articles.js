@@ -7,9 +7,9 @@ const initialState =
     loading:false,
     health:[],
     sports:[],
-    entertainement:[],
+    entertainment:[],
     technology:[],
-    finance:[],
+    business:[],
     general:[]
 };
 

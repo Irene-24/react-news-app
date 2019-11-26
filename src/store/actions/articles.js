@@ -8,6 +8,7 @@ export const fetchArticlesStart = () => {
 
 export const fetchArticlesSuccess = (category,articles) => 
 {
+
      
   return {
     type: actionTypes.FETCH_ARTICLES_SUCCESS,
@@ -27,8 +28,8 @@ export const fetchArticles = (category="general", page=1) => {
   return dispatch => {
     dispatch(fetchArticlesStart());
 
-    //const url = `https://newsapi.org/v2/top-headlines?category=${category}&page=${page}`;
-    const url = 'http://localhost:3000/dummyData.json';
+    const url = `https://newsapi.org/v2/top-headlines?category=${category}&page=${page}`;
+   // const url = 'http://localhost:3000/dummyData.json';
     fetch(url, {
       method: "GET",
       headers: 

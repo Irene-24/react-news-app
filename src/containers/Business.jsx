@@ -1,14 +1,14 @@
+
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import NewsPage from "../components/NewsPage/NewsPage";
 import LoadingPage from "../components/LoadingPage/LoadingPage";
 import * as actionCreators from "../store/actions/actionCreators";
-
-class Entertainment extends Component
+class Business extends Component
 {
     state =
     {
-        category:"entertainment",
+        category:"business",
         page:1
     }
 
@@ -23,9 +23,8 @@ class Entertainment extends Component
        const view = this.props.loading ? <LoadingPage /> : <NewsPage title={this.state.category} articles={this.props.articles}/>;
        return view;
     }
-
-
 }
+
 
 const mapDispatchToProps = dispatch =>
 { 
@@ -37,9 +36,9 @@ const mapDispatchToProps = dispatch =>
 const mapStateToProps = state =>
 {
     return {
-        articles:state.articles.entertainment,
+        articles:state.articles.business,
         loading:state.articles.loading
     }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Entertainment);
+export default connect(mapStateToProps,mapDispatchToProps)(Business);

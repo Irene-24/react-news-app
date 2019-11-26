@@ -2,6 +2,13 @@ import React from "react";
 import News from "./News/News";
 import classes from "./NewsPage.module.css";
 
+const capitalizeFirst = (title) =>
+{
+    const first = title[0].toUpperCase();
+
+    return first+title.substring(1);
+}
+
 const newsPage = props => {
   const header = props.keyword ? (
     <h1 className={classes.Title}>
@@ -9,7 +16,7 @@ const newsPage = props => {
     </h1>
   ) : (
     <h1 className={classes.Title}>
-      {props.title} {props.isHome ? "Stories" : "News"}
+      { capitalizeFirst(props.title) } {props.isHome ? "Stories" : "News"}
     </h1>
   );
   const articles =

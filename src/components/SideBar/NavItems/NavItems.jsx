@@ -7,7 +7,7 @@ import Github from "../../../assets/img/github-logo.svg";
 
 const pages =
     [
-        'home', 'health', 'finance', 'sports', 'technology', 'entertainment'
+        'home', 'health', 'business', 'sports', 'technology', 'entertainment'
     ];
 
 

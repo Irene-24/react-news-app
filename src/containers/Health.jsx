@@ -20,7 +20,7 @@ class Health extends Component
  
     render()
     {
-       const view = this.props.loading ? <LoadingPage /> : <NewsPage title="Health" articles={this.props.articles}/>;
+       const view = this.props.loading ? <LoadingPage /> : <NewsPage title={this.state.category} articles={this.props.articles}/>;
        return view;
     }
 

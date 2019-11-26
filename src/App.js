@@ -9,7 +9,7 @@ import Home from "./containers/Home";
 const asyncSports = asyncComponent( () => import('./containers/Sports') );
 const asyncHealth = asyncComponent( () => import('./containers/Health') );
 const asyncTechnology = asyncComponent( () => import("./containers/Technology") );
-const asyncFinance = asyncComponent( () => import('./containers/Finance') );
+const asyncBusiness = asyncComponent( () => import('./containers/Business') );
 const asyncEntertainment = asyncComponent( () => import("./containers/Entertainment") );
 const asyncSearchPage = asyncComponent( () => import("./containers/SearchPage") );
 
@@ -31,7 +31,7 @@ class App extends Component
       
         <Route path="/home" component={Home}/>
         <Route path="/health" component={asyncHealth} />
-        <Route path="/finance" component={asyncFinance} />
+        <Route path="/business" component={asyncBusiness} />
         <Route path="/sports" component={asyncSports} />
         <Route path="/technology" component={asyncTechnology} /> 
         <Route path="/entertainment" component={asyncEntertainment} />

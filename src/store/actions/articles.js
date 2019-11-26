@@ -27,7 +27,6 @@ export const fetchArticlesFail = err => {
 export const fetchArticles = (category="general", page=1) => {
   return dispatch => {
     dispatch(fetchArticlesStart());
-
     const url = `https://newsapi.org/v2/top-headlines?category=${category}&page=${page}`;
    // const url = 'http://localhost:3000/dummyData.json';
     fetch(url, {
@@ -45,8 +44,6 @@ export const fetchArticles = (category="general", page=1) => {
         } 
         else 
         {
-          console.log(1);
-          
           dispatch(fetchArticlesFail());
         }
       })
@@ -57,7 +54,6 @@ export const fetchArticles = (category="general", page=1) => {
         } )
       .catch(err =>
         {
-          console.log(2);
           dispatch(fetchArticlesFail(err))
         } );
   };

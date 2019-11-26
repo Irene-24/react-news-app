@@ -5,18 +5,41 @@ const initialState =
 {
     keyword:"",
     loading:false,
-    health:[],
-    sports:[],
-    entertainment:[],
-    technology:[],
-    business:[],
-    general:[]
+    health: {
+        currPage:1,
+        list:[]
+    },
+    sports: {
+        currPage:1,
+        list:[]
+    },
+    entertainment: {
+        currPage:1,
+        list:[]
+    },
+    technology:
+    {
+        currPage:1,
+        list:[]
+    },
+    business: {
+        currPage:1,
+        list:[]
+    },
+    general: {
+        currPage:1,
+        list:[]
+    },
 };
 
 const fetchArticlesSuccess = (category,articles,state) =>
 {
    
-    return updateObject(state,{[category]:[...state[category],...articles],loading:false})
+    const oldArticles = state[category].list;
+    const updatedCategory = updateObject( state[category], { list:[...oldArticles, ...articles  ] } );
+    
+    state[category] = updatedCategory;
+    return updateObject(state,{loading:false});
 };
 
 const fetchArticlesStart = (state) =>

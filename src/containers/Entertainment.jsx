@@ -8,13 +8,12 @@ class Entertainment extends Component
 {
     state =
     {
-        category:"entertainment",
-        page:1
+        category:"entertainment"
     }
 
     componentDidMount()
     {
-        this.props.fetchArticles(this.state.category,this.state.page);  
+        this.props.fetchArticles(this.state.category,this.props.page);  
     }
     
  
@@ -37,8 +36,9 @@ const mapDispatchToProps = dispatch =>
 const mapStateToProps = state =>
 {
     return {
-        articles:state.articles.entertainment,
-        loading:state.articles.loading
+        articles:state.articles.entertainment.list,
+        loading:state.articles.loading,
+        page:state.articles.entertainment.currPage
     }
 }
 

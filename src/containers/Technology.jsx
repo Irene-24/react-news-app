@@ -8,13 +8,12 @@ class Technology extends Component
 {
     state =
     {
-        category:"technology",
-        page:1
+        category:"technology"
     }
 
     componentDidMount()
     {
-        this.props.fetchArticles(this.state.category,this.state.page);  
+        this.props.fetchArticles(this.state.category,this.props.page);  
     }
     
     render()
@@ -36,8 +35,9 @@ const mapDispatchToProps = dispatch =>
 const mapStateToProps = state =>
 {
     return {
-        articles:state.articles.technology,
-        loading:state.articles.loading
+        articles:state.articles.technology.list,
+        loading:state.articles.loading,
+        page:state.articles.technology.currPage
     }
 }
 

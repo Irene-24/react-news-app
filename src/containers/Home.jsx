@@ -10,13 +10,12 @@ class Home extends Component
 {
     state =
     {
-        category:"general",
-        page:1
+        category:"general"
     }
 
     componentDidMount()
     {
-        this.props.fetchArticles(this.state.category,this.state.page);  
+        this.props.fetchArticles(this.state.category,this.props.page);  
     }
     
     render()
@@ -37,8 +36,9 @@ const mapDispatchToProps = dispatch =>
 const mapStateToProps = state =>
 {
     return {
-        articles:state.articles.general,
-        loading:state.articles.loading
+        articles:state.articles.general.list,
+        loading:state.articles.loading,
+        page:state.articles.general.currPage
     }
 }
 

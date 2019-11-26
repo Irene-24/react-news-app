@@ -8,13 +8,12 @@ class Health extends Component
 {
     state =
     {
-        category:"health",
-        page:1
+        category:"health"
     }
 
     componentDidMount()
     {
-        this.props.fetchArticles(this.state.category,this.state.page);  
+        this.props.fetchArticles(this.state.category,this.props.page);  
     }
     
  
@@ -36,8 +35,9 @@ const mapDispatchToProps = dispatch =>
 const mapStateToProps = state =>
 {
     return {
-        articles:state.articles.health,
-        loading:state.articles.loading
+        articles:state.articles.health.list,
+        loading:state.articles.loading,
+        page:state.articles.health.currPage
     }
 }
 

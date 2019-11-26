@@ -8,12 +8,11 @@ class Sports extends Component
 {
     state =
     {
-        category:"sports",
-        page:1
+        category:"sports"
     }
     componentDidMount()
     {
-        this.props.fetchArticles(this.state.category,this.state.page);  
+        this.props.fetchArticles(this.state.category,this.props.page);  
     }
     
  
@@ -35,8 +34,9 @@ const mapDispatchToProps = dispatch =>
 const mapStateToProps = state =>
 {
     return {
-        articles:state.articles.sports,
-        loading:state.articles.loading
+        articles:state.articles.sports.list,
+        loading:state.articles.loading,
+        page:state.articles.sports.currPage
     }
 }
 

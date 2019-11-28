@@ -29,8 +29,7 @@ export const fetchArticles = (category="general", page=1,alreadyLoaded=false) =>
   return dispatch => {
 
     if(!alreadyLoaded)
-    {
-      console.log(alreadyLoaded);      
+    {     
       dispatch(fetchArticlesStart());
     }    
     const url = `https://newsapi.org/v2/top-headlines?category=${category}&page=${page}&country=us`;

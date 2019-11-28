@@ -1,43 +1,95 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import NewsPage from "../components/NewsPage/NewsPage";
 import LoadingPage from "../components/LoadingPage/LoadingPage";
+import LoadMore from "../components/LoadMore/LoadMore";
 import * as actionCreators from "../store/actions/actionCreators";
 
 class Health extends Component
 {
-    state =
+    constructor(props)
     {
-        category:"health"
-    }
-
-    componentDidMount()
-    {
-        this.props.fetchArticles(this.state.category,this.props.page);  
+      super(props);
+      this.myRef = React.createRef();
+      this.state =
+      {
+          category:"health"
+      };
     }
     
- 
-    render()
+
+    componentDidMount() 
     {
-       const view = this.props.loading ? <LoadingPage /> : <NewsPage title={this.state.category} articles={this.props.articles}/>;
-       return view;
+      this.props.fetchArticles(this.state.category, this.props.page);
+  
+      const options = 
+      {
+          root: null, 
+          rootMargin: '0px',
+          threshold: 0.7
+      };
+  
+     
+        this.observer = new IntersectionObserver( this.handleObserver, options );
+        
+        this.observer.observe(this.myRef.current);  
+           
+      
     }
 
+    
+
+  componentWillUnmount()
+  {
+    this.observer.disconnect();  
+  }
+
+ 
+  handleObserver = (entities, options) =>
+  {
+    if(this.props.articles.length > 0)
+    {
+        if(entities[0].intersectionRatio >=0.7 && (this.props.page <= this.props.maxPageCount))
+        {
+          this.props.fetchArticles(this.state.category, this.props.page, true );
+        }
+        
+    }
+  }
+    
+  render() {
+    const view = this.props.loading ? (
+      <LoadingPage />
+    ) : (
+      <NewsPage title={this.state.category} articles={this.props.articles} />
+    );
+
+    return (
+      <>        
+        {view} 
+       <div style={{height:"100px"}} ref={this.myRef}>
+         <LoadMore full = {this.props.page > this.props.maxPageCount}  />
+       </div>
+      </>
+    );
+  }
 }
 
-const mapDispatchToProps = dispatch =>
-{ 
+
+const mapDispatchToProps = dispatch => {
     return {
-        fetchArticles: (category,page) => dispatch( actionCreators.fetchArticles(category,page) ) 
+      fetchArticles: (category, page,alreadyLoaded=false) =>
+        dispatch(actionCreators.fetchArticles(category, page,alreadyLoaded))
+    };
   };
-};
 
 const mapStateToProps = state =>
 {
     return {
         articles:state.articles.health.list,
         loading:state.articles.loading,
-        page:state.articles.health.currPage
+        page:state.articles.health.currPage,
+        maxPageCount:state.articles.technology.maxPageCount
     }
 }
 

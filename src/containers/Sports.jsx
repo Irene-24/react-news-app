@@ -88,7 +88,7 @@ const mapStateToProps = state =>
         articles:state.articles.sports.list,
         loading:state.articles.loading,
         page:state.articles.sports.currPage,
-        maxPageCount:state.articles.technology.maxPageCount
+        maxPageCount:state.articles.sports.maxPageCount
     }
 }
 

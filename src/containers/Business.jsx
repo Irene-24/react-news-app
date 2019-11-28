@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import NewsPage from "../components/NewsPage/NewsPage";
 import LoadingPage from "../components/LoadingPage/LoadingPage";
 import * as actionCreators from "../store/actions/actionCreators";
+
 class Business extends Component
 {
     state =

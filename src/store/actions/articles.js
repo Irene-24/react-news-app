@@ -6,14 +6,15 @@ export const fetchArticlesStart = () => {
   };
 };
 
-export const fetchArticlesSuccess = (category,articles) => 
+export const fetchArticlesSuccess = (category,articles,maxPageCount) => 
 {
 
      
   return {
     type: actionTypes.FETCH_ARTICLES_SUCCESS,
     articles,
-    category
+    category,
+    maxPageCount
   };
 };
 
@@ -24,10 +25,15 @@ export const fetchArticlesFail = err => {
   };
 };
 
-export const fetchArticles = (category="general", page=1) => {
+export const fetchArticles = (category="general", page=1,alreadyLoaded=false) => {
   return dispatch => {
-    dispatch(fetchArticlesStart());
-    const url = `https://newsapi.org/v2/top-headlines?category=${category}&page=${page}`;
+
+    if(!alreadyLoaded)
+    {
+      console.log(alreadyLoaded);      
+      dispatch(fetchArticlesStart());
+    }    
+    const url = `https://newsapi.org/v2/top-headlines?category=${category}&page=${page}&country=us`;
    // const url = 'http://localhost:3000/dummyData.json';
     fetch(url, {
       method: "GET",
@@ -48,9 +54,10 @@ export const fetchArticles = (category="general", page=1) => {
         }
       })
       .then( res =>
-        {
+        {   
+            const maxPageCount = Math.ceil(res.totalResults/20)  ;    
             const articles = res.articles;
-            dispatch(fetchArticlesSuccess(category,articles));
+            dispatch(fetchArticlesSuccess(category,articles,maxPageCount));
         } )
       .catch(err =>
         {
@@ -58,3 +65,5 @@ export const fetchArticles = (category="general", page=1) => {
         } );
   };
 };
+
+

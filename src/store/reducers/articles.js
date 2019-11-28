@@ -20,6 +20,7 @@ const initialState =
     technology:
     {
         currPage:1,
+        maxPageCount:1,
         list:[]
     },
     business: {
@@ -32,13 +33,21 @@ const initialState =
     },
 };
 
-const fetchArticlesSuccess = (category,articles,state) =>
+const fetchArticlesSuccess = (category,articles,maxPageCount,state) =>
 {
    
     const oldArticles = state[category].list;
-    const updatedCategory = updateObject( state[category], { list:[...oldArticles, ...articles  ] } );
-    
-    state[category] = updatedCategory;
+
+    if(state[category].currPage <= state[category].maxPageCount )
+    {
+        const currPage = state[category].currPage+1;
+        const updatedCategory = updateObject( state[category], { currPage, maxPageCount,list:[...oldArticles, ...articles  ] } );  
+        state[category] = updatedCategory;
+
+
+    }
+
+
     return updateObject(state,{loading:false});
 };
 
@@ -63,7 +72,7 @@ const reducer = (state = initialState, action) =>
                 return fetchArticlesStart(state);
 
         case actionTypes.FETCH_ARTICLES_SUCCESS:
-            return fetchArticlesSuccess(action.category,action.articles,state);
+            return fetchArticlesSuccess(action.category,action.articles,action.maxPageCount,state);
         
         case actionTypes.FETCH_ARTICLES_FAIL:
             return fetchArticlesFail(state);

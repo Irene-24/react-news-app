@@ -1,44 +1,94 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import NewsPage from "../components/NewsPage/NewsPage";
 import LoadingPage from "../components/LoadingPage/LoadingPage";
+import Observer from "../components/Observer/Observer";
 import * as actionCreators from "../store/actions/actionCreators";
 
-class Technology extends Component
-{
-    state =
-    {
-        category:"technology"
-    }
+class Technology extends Component {
 
-    componentDidMount()
+  constructor(props)
+  {
+    super(props);
+    this.myRef = React.createRef();
+    this.state = {
+      category: "technology"
+    };
+  }
+  
+
+  componentDidMount() 
+  {
+    this.props.fetchArticles(this.state.category, this.props.page);
+    const options = 
     {
-        this.props.fetchArticles(this.state.category,this.props.page);  
-    }
+        root: null, 
+        rootMargin: '0px',
+        threshold: 1
+    };
+
+   
+      this.observer = new IntersectionObserver( this.handleObserver, options );
+      //Observe the `loadingRef`
+
+      const node = this.myRef.current; 
+      this.observer.observe(node); 
+
+      //console.log('mounted');
+         
     
-    render()
+  }
+
+  
+
+  componentWillUnmount()
+  {
+    this.observer.disconnect();  
+  }
+
+ 
+  handleObserver = (entities, options) =>
+  {
+    if(this.props.articles.length > 0)
     {
-
-        const view = this.props.loading ? <LoadingPage /> : <NewsPage title={this.state.category} articles={this.props.articles}/>;
-        return view;
+      if(entities[0].intersectionRatio === 0.7)
+      {
+        this.props.fetchArticles(this.state.category, this.props.page, true );
+        console.log(entities);
+        console.log(options);
+      }
+        
     }
+  }
 
+  render() {
+    const view = this.props.loading ? (
+      <LoadingPage />
+    ) : (
+      <NewsPage title={this.state.category} articles={this.props.articles} />
+    );
+    return (
+      <>        
+        {view} 
+        <Observer > <div ref={this.myRef}></div>  </Observer >
+      </>
+    );
+  }
 }
 
-const mapDispatchToProps = dispatch =>
-{ 
-    return {
-        fetchArticles: (category,page) => dispatch( actionCreators.fetchArticles(category,page) ) 
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchArticles: (category, page,alreadyLoaded=false) =>
+      dispatch(actionCreators.fetchArticles(category, page,alreadyLoaded))
   };
 };
 
-const mapStateToProps = state =>
-{
-    return {
-        articles:state.articles.technology.list,
-        loading:state.articles.loading,
-        page:state.articles.technology.currPage
-    }
-}
+const mapStateToProps = state => {
+  return {
+    articles: state.articles.technology.list,
+    loading: state.articles.loading,
+    page: state.articles.technology.currPage
+  };
+};
 
-export default connect(mapStateToProps,mapDispatchToProps)(Technology);
+export default connect(mapStateToProps, mapDispatchToProps)(Technology);

@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect } from "react-router-dom";
+import createHistory from "history/createBrowserHistory"
 import asyncComponent from "./hoc/asyncComponent";
 import Layout from "./components/Layout/Layout";
-
 import SearchBar from "./components/SearchBar/SearchBar";
 import Home from "./containers/Home";
 
-import createHistory from "history/createBrowserHistory"
 
 export const history = createHistory()
 
-history.listen((location, action) => {
+history.listen((location, action) => 
+{
+   if(action === 'PUSH' )
+   {
     window.scrollTo(0, 0)
+   }
+   
 })
 
 

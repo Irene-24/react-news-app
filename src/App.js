@@ -9,14 +9,10 @@ import Home from "./containers/Home";
 
 export const history = createHistory()
 
-history.listen((location, action) => 
+history.listen(() => 
 {
-   if(action === 'PUSH' )
-   {
-    window.scrollTo(0, 0)
-   }
-   
-})
+    window.scrollTo(0, 0)   
+});
 
 
 const asyncSports = asyncComponent( () => import('./containers/Sports') );

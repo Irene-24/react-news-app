@@ -36,7 +36,9 @@ class Business extends Component
       this.observer.observe(this.myRef.current);  
          
     
-  }  
+  }
+
+  
 
   componentWillUnmount()
   {
@@ -85,7 +87,7 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = state =>
 {
     return {
-        articles:state.articles.business,
+        articles:state.articles.business.list,
         loading:state.articles.loading,
         page: state.articles.business.currPage,
     maxPageCount:state.articles.business.maxPageCount

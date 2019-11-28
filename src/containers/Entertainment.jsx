@@ -16,6 +16,7 @@ class Entertainment extends Component
           category:"entertainment"
       };
     }
+    
     componentDidMount() 
     {
       this.props.fetchArticles(this.state.category, this.props.page);

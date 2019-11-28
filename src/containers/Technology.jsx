@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import NewsPage from "../components/NewsPage/NewsPage";
 import LoadingPage from "../components/LoadingPage/LoadingPage";
+import LoadMore from "../components/LoadMore/LoadMore";
 import * as actionCreators from "../store/actions/actionCreators";
 
 class Technology extends Component {
@@ -19,21 +20,18 @@ class Technology extends Component {
   componentDidMount() 
   {
     this.props.fetchArticles(this.state.category, this.props.page);
+
     const options = 
     {
         root: null, 
         rootMargin: '0px',
-        threshold: 1
+        threshold: 0.7
     };
 
    
       this.observer = new IntersectionObserver( this.handleObserver, options );
-      //Observe the `loadingRef`
-
-      const node = this.myRef.current; 
-      this.observer.observe(node); 
-
-      //console.log('mounted');
+      
+      this.observer.observe(this.myRef.current);  
          
     
   }
@@ -50,9 +48,11 @@ class Technology extends Component {
   {
     if(this.props.articles.length > 0)
     {
-        this.props.fetchArticles(this.state.category, this.props.page, true );
-        console.log(entities);
-        console.log(options);
+        if(entities[0].intersectionRatio >=0.7 && (this.props.page <= this.props.maxPageCount))
+        {
+          this.props.fetchArticles(this.state.category, this.props.page, true );
+        }
+        
     }
   }
 
@@ -62,10 +62,13 @@ class Technology extends Component {
     ) : (
       <NewsPage title={this.state.category} articles={this.props.articles} />
     );
+
     return (
       <>        
         {view} 
-       <div ref={this.myRef}></div>
+       <div style={{height:"100px"}} ref={this.myRef}>
+         <LoadMore full = {this.props.page > this.props.maxPageCount}  />
+       </div>
       </>
     );
   }
@@ -82,7 +85,8 @@ const mapStateToProps = state => {
   return {
     articles: state.articles.technology.list,
     loading: state.articles.loading,
-    page: state.articles.technology.currPage
+    page: state.articles.technology.currPage,
+    maxPageCount:state.articles.technology.maxPageCount
   };
 };
 

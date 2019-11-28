@@ -6,12 +6,23 @@ import Layout from "./components/Layout/Layout";
 import SearchBar from "./components/SearchBar/SearchBar";
 import Home from "./containers/Home";
 
+import createHistory from "history/createBrowserHistory"
+
+export const history = createHistory()
+
+history.listen((location, action) => {
+    window.scrollTo(0, 0)
+})
+
+
 const asyncSports = asyncComponent( () => import('./containers/Sports') );
 const asyncHealth = asyncComponent( () => import('./containers/Health') );
 const asyncTechnology = asyncComponent( () => import("./containers/Technology") );
 const asyncBusiness = asyncComponent( () => import('./containers/Business') );
 const asyncEntertainment = asyncComponent( () => import("./containers/Entertainment") );
 const asyncSearchPage = asyncComponent( () => import("./containers/SearchPage") );
+
+
 
 class App extends Component 
 {
@@ -53,6 +64,9 @@ class App extends Component
     return view;
   }
 }  
+
+
+
 
 
 

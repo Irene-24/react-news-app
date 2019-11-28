@@ -7,14 +7,17 @@ const initialState =
     loading:false,
     health: {
         currPage:1,
+        maxPageCount:1,
         list:[]
     },
     sports: {
         currPage:1,
+        maxPageCount:1,
         list:[]
     },
     entertainment: {
         currPage:1,
+        maxPageCount:1,
         list:[]
     },
     technology:
@@ -25,10 +28,12 @@ const initialState =
     },
     business: {
         currPage:1,
+        maxPageCount:1,
         list:[]
     },
     general: {
         currPage:1,
+        maxPageCount:1,
         list:[]
     },
 };

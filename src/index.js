@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from "react-router-dom";
+import { createBrowserHistory } from "history";
 import {applyMiddleware , compose , combineReducers , createStore } from 'redux';
 import { Provider } from "react-redux";
 import thunk from 'redux-thunk';
@@ -19,11 +20,12 @@ const rootReducer = combineReducers(
     }
 );
 
+
 const appStore = createStore(rootReducer,composeEnhancers( applyMiddleware(thunk) ));
 
 const newsApp = (
     <Provider store={appStore}>
-        <Router>
+        <Router onUpdate={() => window.scrollTo(0, 0)} history={createBrowserHistory()}>
             <App />
         </Router>
     </Provider>

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import NewsPage from "../components/NewsPage/NewsPage";
 import LoadingPage from "../components/LoadingPage/LoadingPage";
-import Observer from "../components/Observer/Observer";
 import * as actionCreators from "../store/actions/actionCreators";
 
 class Technology extends Component {
@@ -51,13 +50,9 @@ class Technology extends Component {
   {
     if(this.props.articles.length > 0)
     {
-      if(entities[0].intersectionRatio === 0.7)
-      {
         this.props.fetchArticles(this.state.category, this.props.page, true );
         console.log(entities);
         console.log(options);
-      }
-        
     }
   }
 
@@ -70,7 +65,7 @@ class Technology extends Component {
     return (
       <>        
         {view} 
-        <Observer > <div ref={this.myRef}></div>  </Observer >
+       <div ref={this.myRef}></div>
       </>
     );
   }

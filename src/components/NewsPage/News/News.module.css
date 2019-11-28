@@ -15,6 +15,7 @@
   
     background: var(--light-green);
     height: 150px;    
+    border-bottom: 1px solid var(--grey-brown);
 
 }
 

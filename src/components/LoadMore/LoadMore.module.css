@@ -7,7 +7,15 @@
 {
     text-align: center;
     font-size: 1.5rem;
+    animation: fadeIn 2s infinite;
     
+}
+
+@keyframes fadeIn 
+{
+    0% {opacity : 0.4}
+    50% {opacity : 0.8}
+    100% {opacity : 0.4}
 }
 
 @media  (min-width:768px) and (max-width:991px)

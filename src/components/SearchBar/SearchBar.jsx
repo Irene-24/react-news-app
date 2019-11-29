@@ -9,10 +9,12 @@ class Search extends Component {
   };
 
   inputHandler = event => {
+    event.preventDefault();
     this.setState({ keyword: event.target.value.trim() });
   };
 
   search = event => {
+    event.preventDefault();
     if (event.keyCode === 13) {
       this.lookup();
     }
@@ -27,7 +29,7 @@ class Search extends Component {
 
   render() {
     return (
-      <div onClick={this.lookup} className={classes.Search}>
+      <div className={classes.Search}>
         <img className={classes.Icon} src={searchIcon} alt="magnifier icon" />
         <input
           type="text"

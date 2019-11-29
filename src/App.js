@@ -24,7 +24,8 @@ class App extends Component
 
   searchHandler= (keyword) =>
   {
-     console.log(keyword);
+     //console.log(keyword);
+     this.props.searchKeyword(keyword);
      
   } 
 
@@ -63,8 +64,8 @@ class App extends Component
 
 const mapDispatchToProps = dispatch => {
   return {
-    searchKeyword: () =>
-      dispatch(actionCreators.searchKeyword())
+    searchKeyword: (keyword) =>
+      dispatch(actionCreators.searchKeyword(keyword))
   };
 };
 

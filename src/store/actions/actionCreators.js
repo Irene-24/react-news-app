@@ -1,5 +1,4 @@
 export 
 {
-    fetchArticles,
-    fetchArticlesStart
+    fetchArticles
 } from './articles';

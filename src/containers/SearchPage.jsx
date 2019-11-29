@@ -1,22 +1,59 @@
-import React, { Component } from 'react';
-//import NewsPage from "../components/NewsPage/NewsPage";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import NewsPage from "../components/NewsPage/NewsPage";
+import LoadingPage from "../components/LoadingPage/LoadingPage";
+import LoadMore from "../components/LoadMore/LoadMore";
+import * as actionCreators from "../store/actions/actionCreators";
 
-class SearchPage extends Component
-{
-    
-    render()
-    {
-        return (
-            <>
-               
-                {/* <NewsPage title={`${this.state.count} results found for`} keyword ={ this.state.keyword }articles={this.state.articles} /> */}
+class SearchPage extends Component {
+  constructor(props) {
+    super(props);
+    this.myRef = React.createRef();
+  }
 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis inventore ipsam eaque doloremque voluptatum tempore ad autem soluta ex maxime modi iste minima, consequuntur provident, odit dolorum deleniti rem? Dolor laudantium dolores esse vitae veniam non, harum fugit ratione voluptatem aperiam perferendis officia praesentium saepe corporis id ab magnam modi ipsum voluptatum ea at sit natus quam! Iusto, labore mollitia vel tempore delectus natus soluta dolor praesentium deleniti aperiam vero libero, repellendus fugiat id ad. Natus sequi laboriosam laudantium error, ad, eligendi facilis sint voluptas quo praesentium illo cum beatae quae nobis officia optio quibusdam! Non totam ex nisi fugit.</p>
-             
-            </>
-        );
-    }
+  componentDidMount() {
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.7
+    };
+  }
 
+  render() {
+    const view = this.props.loading ? (
+      <LoadingPage />
+    ) : (
+      <NewsPage
+        title={`${this.props.total} results found for`}
+        keyword={this.props.keyword} isSearch
+        articles={this.props.articles}
+      />
+    );
+
+    return (
+      <>
+        {view}
+        <div style={{ height: "100px" }} ref={this.myRef}>
+          {/* <LoadMore full={this.props.page > this.props.maxPageCount} /> */}
+        </div>
+      </>
+    );
+  }
 }
 
-export default SearchPage;
+const mapDispatchToProps = dispatch => {
+  return {
+    searchKeyword: keyword => dispatch(actionCreators.searchKeyword(keyword))
+  };
+};
+
+const mapStateToProps = state => {
+  return {
+    keyword: state.search.keyword,
+    loading: state.search.loading,
+    total: state.search.total,
+    articles: state.search.list
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchPage);

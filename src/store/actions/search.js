@@ -1,12 +1,13 @@
 import * as actionTypes from "./actionTypes";
 
-export const searchKeywordSuccess = (articles,maxPageCount) =>
+export const searchKeywordSuccess = (articles,total,maxPageCount) =>
 {
     //console.log('1234');
     
     return {
         type:actionTypes.SEARCH_KEYWORD_SUCCESS,
         articles,
+        total,
         maxPageCount
     }
 }
@@ -73,11 +74,12 @@ export const searchKeyword = (keyword,alreadyLoaded=false) =>
                     {   
                         const maxPageCount = Math.ceil(res.totalResults/20)  ;
 
-                        const articles = res.articles;   
+                        const articles = res.articles;  
+                        const total = res.totalResults;
     
                         //console.log(res);
 
-                        dispatch(searchKeywordSuccess(articles,maxPageCount));
+                        dispatch(searchKeywordSuccess(articles,total,maxPageCount));
                     } )
                   .catch(err =>
                     {

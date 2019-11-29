@@ -22,15 +22,15 @@ class Search extends Component {
 
   lookup = () => {
     if (this.state.keyword !== "") {
-      this.props.search(this.state.keyword);
-      this.props.history.push("/search");
+      this.props.search(this.state.keyword);          
+     this.props.history.push("/search");
     }
   };
 
   render() {
     return (
-      <div className={classes.Search}>
-        <img className={classes.Icon} src={searchIcon} alt="magnifier icon" />
+      <div  className={classes.Search}>
+        <img onClick={this.lookup} className={classes.Icon} src={searchIcon} alt="magnifier icon" />
         <input
           type="text"
           value={this.state.keyword}

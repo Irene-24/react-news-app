@@ -49,7 +49,13 @@ const formatter = (date) => {
 const stripSrc = (title) =>
 {
      const indexOfDash = title.toString().lastIndexOf('-');
-     return `${title.substring(0,indexOfDash).trim()}.`;
+     if(indexOfDash !== -1)
+     {
+      return `${title.substring(0,indexOfDash).trim()}.`;
+     }
+
+     return title;
+     
 }
 
 export 

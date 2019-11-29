@@ -5,14 +5,13 @@ import classes from "./NewsPage.module.css";
 const capitalizeFirst = (title) =>
 {
     const first = title[0].toUpperCase();
-
     return first+title.substring(1);
 }
 
 const newsPage = props => {
   const header = props.keyword ? (
     <h1 className={classes.Title}>
-      {props.title} <i className={classes.Keyword}>"{props.keyword}"</i>{" "}
+      {props.title} <i className={classes.Keyword}>"{props.keyword}"</i>
     </h1>
   ) : (
     <h1 className={classes.Title}>
@@ -21,7 +20,7 @@ const newsPage = props => {
   );
   const articles =
     props.articles.length > 0
-      ? [...props.articles].map((article, i) => <News key={i} news={article} />)
+      ? [...props.articles].map((article, i) => <News p={props.isSearch} key={i} news={article} />)
       : null;
   return (
     <>

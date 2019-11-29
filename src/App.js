@@ -24,8 +24,8 @@ class App extends Component
 
   searchHandler= (keyword) =>
   {
-     //console.log(keyword);
-     this.props.searchKeyword(keyword);
+     
+     this.props.searchKeyword(keyword); 
      
   } 
 
@@ -69,12 +69,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-const mapStateToProps = state =>
-{
-    return {
-       keyword:state.search.keyword
-    }
-}
 
 
-export default connect(mapStateToProps,mapDispatchToProps)(App);
+
+export default connect(null,mapDispatchToProps)(App);

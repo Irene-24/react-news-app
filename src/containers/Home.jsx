@@ -55,7 +55,7 @@ class Home extends Component
         const view = this.props.loading ? (
           <LoadingPage />
         ) : (
-          <NewsPage title={this.state.category} articles={this.props.articles} />
+          <NewsPage isHome title="Top" articles={this.props.articles} />
         );
     
         return (

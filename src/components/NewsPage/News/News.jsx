@@ -22,7 +22,12 @@ const news = (props) =>
         alt ="loudspeaker placeholder pic";
     }
 
+    if(props.p)
+    {
+        console.log(props.news.title);
+    }
 
+ 
     return (
         <div className={classes.NewsCard}>
             <div className={classes.ImgDiv}>

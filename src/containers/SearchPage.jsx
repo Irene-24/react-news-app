@@ -1,54 +1,17 @@
 import React, { Component } from 'react';
-import NewsPage from "../components/NewsPage/NewsPage";
+//import NewsPage from "../components/NewsPage/NewsPage";
 
 class SearchPage extends Component
 {
-    state = 
-    {
-        articles : 
-        [
-            {
-                title: "SpaceX successfully completes Crew Dragon engine tests without an explosion - Engadget",
-                url: '/',
-                urlToImage: "https://thumbor.forbes.com/thumbor/600x315/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5dc0d32bca425400079c6fd7%2F960x0.jpg",
-                src:'The Daily Bugle',
-                publishedAt:"2019-11-03T07:40:00Z"
-            },
-            {
-                title: "Chinese state media issues dire warning as Hong Kong protests take dark turn - CNN",
-                url: '/',
-                urlToImage: "https://image.cnbcfm.com/api/v1/image/106196083-1571759978719gettyimages-905611490.jpeg?v=1574685344",
-                src:'CNN',
-                publishedAt:"2019-11-11T07:40:00Z"
-            },
-            
-            {
-                title: "SpaceX successfully completes Crew Dragon engine tests without an explosion - Engadget",
-                url: '/',
-                urlToImage: "https://cdn.vox-cdn.com/thumbor/-P9u4RMiocRD4euj2TO4Bo67lw4=/319x671:2177x1644/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/19406354/1183883122.jpg.jpg",
-                src:'The Daily Bugle',
-                publishedAt:"2019-11-12T07:40:00Z"
-            },
-            {
-                title: "Chinese state media issues dire warning as Hong Kong protests take dark turn - CNN",
-                url: '/',
-                urlToImage:  "https://techcrunch.com/wp-content/uploads/2017/09/gettyimages-502235562.jpg?w=600",
-                src:'CNN',
-                publishedAt:"2019-11-14T07:40:00Z"
-            }
-        ]
-        
-        
-    }
-    //x =  number of results
-    //meat will be eplaced by query/keyword set in redux store
-
+    
     render()
     {
         return (
             <>
                
-                <NewsPage title={`${this.state.count} results found for`} keyword ={ this.state.keyword }articles={this.state.articles} />
+                {/* <NewsPage title={`${this.state.count} results found for`} keyword ={ this.state.keyword }articles={this.state.articles} /> */}
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis inventore ipsam eaque doloremque voluptatum tempore ad autem soluta ex maxime modi iste minima, consequuntur provident, odit dolorum deleniti rem? Dolor laudantium dolores esse vitae veniam non, harum fugit ratione voluptatem aperiam perferendis officia praesentium saepe corporis id ab magnam modi ipsum voluptatum ea at sit natus quam! Iusto, labore mollitia vel tempore delectus natus soluta dolor praesentium deleniti aperiam vero libero, repellendus fugiat id ad. Natus sequi laboriosam laudantium error, ad, eligendi facilis sint voluptas quo praesentium illo cum beatae quae nobis officia optio quibusdam! Non totam ex nisi fugit.</p>
              
             </>
         );

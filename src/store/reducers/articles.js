@@ -3,7 +3,6 @@ import { updateObject } from "../utils";
 
 const initialState =
 {
-    keyword:"",
     loading:false,
     health: {
         currPage:1,

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
 import asyncComponent from "./hoc/asyncComponent";
 import Layout from "./components/Layout/Layout";
 import SearchBar from "./components/SearchBar/SearchBar";
 import Home from "./containers/Home";
-
+import * as actionCreators from "./store/actions/actionCreators";
 
 
 
@@ -60,8 +61,19 @@ class App extends Component
 }  
 
 
+const mapDispatchToProps = dispatch => {
+  return {
+    searchKeyword: () =>
+      dispatch(actionCreators.searchKeyword())
+  };
+};
+
+const mapStateToProps = state =>
+{
+    return {
+       keyword:state.search.keyword
+    }
+}
 
 
-
-
-export default App;
+export default connect(mapStateToProps,mapDispatchToProps)(App);

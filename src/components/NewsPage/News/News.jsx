@@ -21,12 +21,6 @@ const news = (props) =>
         image = placeholder;
         alt ="loudspeaker placeholder pic";
     }
-
-    if(props.p)
-    {
-        console.log(props.news.title);
-    }
-
  
     return (
         <div className={classes.NewsCard}>
@@ -43,7 +37,7 @@ const news = (props) =>
                 </span>
                 </div>
                 
-                <p className={classes.Title}>{stripSrc(props.news.title)}</p>
+                <p className={classes.Title}>{props.isSearch ? props.news.title:stripSrc(props.news.title)}</p>
                 <a rel="noopener noreferrer" target="_blank" href={props.news.url} className={classes.ReadMore}>Read More &nbsp;&nbsp; <i className="fas fa-external-link-alt"></i> </a>
             </div>
         </div>

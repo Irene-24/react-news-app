@@ -5,6 +5,7 @@ export
 
 export 
 {
+   setKeyword, 
    searchKeyword
 } from './search';
 

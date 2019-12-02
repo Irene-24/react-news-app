@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect } from "react-router-dom";
-import { connect } from "react-redux";
 import asyncComponent from "./hoc/asyncComponent";
 import Layout from "./components/Layout/Layout";
 import SearchBar from "./components/SearchBar/SearchBar";
 import Home from "./containers/Home";
-import * as actionCreators from "./store/actions/actionCreators";
 
 
 
@@ -21,13 +19,6 @@ const asyncSearchPage = asyncComponent( () => import("./containers/SearchPage") 
 
 class App extends Component 
 {
-
-  searchHandler= (keyword) =>
-  {
-     
-     this.props.searchKeyword(keyword); 
-     
-  } 
 
   render()
   {
@@ -51,7 +42,7 @@ class App extends Component
     let view = (
       <Layout>
          { routes }
-         <SearchBar search={this.searchHandler} />         
+         <SearchBar  />         
         </Layout>
     );
 
@@ -61,15 +52,4 @@ class App extends Component
   }
 }  
 
-
-const mapDispatchToProps = dispatch => {
-  return {
-    searchKeyword: (keyword) =>
-      dispatch(actionCreators.searchKeyword(keyword))
-  };
-};
-
-
-
-
-export default connect(null,mapDispatchToProps)(App);
+export default App;

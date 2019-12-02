@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import * as actionCreators from "../../store/actions/actionCreators";
 import searchIcon from "../../assets/img/magnifier.svg";
 import classes from "./SearchBar.module.css";
 
@@ -21,9 +23,9 @@ class Search extends Component {
   };
 
   lookup = () => {
-    if (this.state.keyword !== "") {
-      this.props.search(this.state.keyword);          
-     this.props.history.push("/search");
+    if (this.state.keyword !== "") 
+    {
+      this.props.setKeyword(this.state.keyword); this.props.history.push("/search");
     }
   };
 
@@ -43,4 +45,13 @@ class Search extends Component {
   }
 }
 
-export default withRouter(Search);
+const mapDispatchToProps = dispatch => {
+  return {
+    setKeyword : (keyword) =>
+      dispatch(actionCreators.setKeyword(keyword) )
+  };
+};
+
+
+
+export default connect(null,mapDispatchToProps)(withRouter(Search));

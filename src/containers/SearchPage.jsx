@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import NewsPage from "../components/NewsPage/NewsPage";
 import LoadingPage from "../components/LoadingPage/LoadingPage";
-import LoadMore from "../components/LoadMore/LoadMore";
+//import LoadMore from "../components/LoadMore/LoadMore";
 import * as actionCreators from "../store/actions/actionCreators";
 
 class SearchPage extends Component {
@@ -11,13 +12,28 @@ class SearchPage extends Component {
     this.myRef = React.createRef();
   }
 
-  componentDidMount() {
-    const options = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.7
-    };
+  componentDidMount() 
+  {
+    
+      if(this.props.keyword === "")
+      {
+          this.props.history.push('/home');
+      }
+      else
+      {
+          this.props.searchKeyword(this.props.keyword);        
+      }
+   
   }
+
+  componentWillUpdate(nextProps) 
+  {
+    console.log(nextProps.keyword);
+  }
+ 
+
+ 
+  
 
   render() {
     const view = this.props.loading ? (
@@ -56,4 +72,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchPage);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(SearchPage));

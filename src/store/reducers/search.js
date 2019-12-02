@@ -11,9 +11,14 @@ const initialState =
     list:[]
 };
 
-const searchKeywordStart = (state,keyword) =>
+const searchKeywordStart = (state) =>
 {   
-    return updateObject(state,{loading:true,keyword})
+    return updateObject(state,{loading:true})
+};
+
+const setKeyword = (state,keyword) =>
+{   
+    return updateObject(state,{keyword})
 };
 
 const searchKeywordSuccess= (articles,total,maxPageCount,state) =>
@@ -42,8 +47,11 @@ const reducer = (state = initialState, action) =>
 {
   switch (action.type) 
   {
+      case actionTypes.SET_KEYWORD:
+          return setKeyword(state,action.keyword);
+
       case actionTypes.SEARCH_KEYWORD_START:
-          return searchKeywordStart(state,action.keyword);
+          return searchKeywordStart(state);
   
       case actionTypes.SEARCH_KEYWORD_SUCCESS:
            return searchKeywordSuccess(action.articles,action.total,action.maxPageCount,state);

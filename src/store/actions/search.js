@@ -15,20 +15,26 @@ export const searchKeywordSuccess = (articles,total,maxPageCount) =>
 
 export const searchKeywordFail = () =>
 {
-    console.log('1234');
-    
+      
     return {
         type:actionTypes.SEARCH_KEYWORD_FAIL
     }
 }
 
 
-export const searchKeywordStart = (keyword) =>
-{
-   
+export const searchKeywordStart = () =>
+{  
     
     return {
-        type:actionTypes.SEARCH_KEYWORD_START,
+        type:actionTypes.SEARCH_KEYWORD_START
+    }
+}
+
+export const setKeyword = (keyword) =>
+{   
+   
+    return {
+        type:actionTypes.SET_KEYWORD,
         keyword
     }
 }
@@ -43,7 +49,7 @@ export const searchKeyword = (keyword,alreadyLoaded=false) =>
         {
             if(!alreadyLoaded)
             {     
-               dispatch(searchKeywordStart(query));
+               dispatch(searchKeywordStart());
             }  
 
             const q = encodeURIComponent(query);
@@ -72,7 +78,7 @@ export const searchKeyword = (keyword,alreadyLoaded=false) =>
                 } )   
                 .then( res =>
                     {   
-                        const maxPageCount = Math.ceil(res.totalResults/20)  ;
+                        const maxPageCount = Math.ceil(res.totalResults/100)  ;
 
                         const articles = res.articles;  
                         const total = res.totalResults;
@@ -88,3 +94,4 @@ export const searchKeyword = (keyword,alreadyLoaded=false) =>
         }
     }
 }
+

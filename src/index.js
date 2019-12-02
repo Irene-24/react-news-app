@@ -12,6 +12,9 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+
+
+
 const composeEnhancers = process.env.NODE_ENV === "development" ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null || compose;
 
 const rootReducer = combineReducers(
@@ -28,7 +31,7 @@ const appStore = createStore(rootReducer,composeEnhancers( applyMiddleware(thunk
 
 const newsApp = (
     <Provider store={appStore}>
-        <Router >
+        <Router  >
             <App />
         </Router>
     </Provider>

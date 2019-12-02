@@ -26,13 +26,6 @@ class SearchPage extends Component {
    
   }
 
-  componentWillUpdate(nextProps) 
-  {
-    console.log(nextProps.keyword);
-  }
- 
-
- 
   
 
   render() {

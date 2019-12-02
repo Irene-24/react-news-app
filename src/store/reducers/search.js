@@ -21,6 +21,20 @@ const setKeyword = (state,keyword) =>
     return updateObject(state,{keyword})
 };
 
+
+const searchFreshKeywordSuccess = (articles,total,maxPageCount,state) =>
+{
+    return updateObject(state, 
+        {
+        currPage:2,
+        list:articles,
+        maxPageCount,
+        total,         
+        loading:false
+    });
+
+}
+
 const searchKeywordSuccess= (articles,total,maxPageCount,state) =>
 {   
     const oldArticles = state.list;
@@ -55,6 +69,9 @@ const reducer = (state = initialState, action) =>
   
       case actionTypes.SEARCH_KEYWORD_SUCCESS:
            return searchKeywordSuccess(action.articles,action.total,action.maxPageCount,state);
+      
+      case actionTypes.SEARCH_FRESH_KEYWORD_SUCCESS:
+            return searchFreshKeywordSuccess(action.articles,action.total,action.maxPageCount,state);    
 
       case actionTypes.SEARCH_KEYWORD_FAIL:
           return searchKeywordFail(state);    

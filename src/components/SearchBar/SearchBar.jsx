@@ -12,7 +12,7 @@ class Search extends Component {
 
   inputHandler = event => {
     event.preventDefault();
-    this.setState({ keyword: event.target.value.trim() });
+    this.setState({ keyword: event.target.value });
   };
 
   search = event => {
@@ -25,7 +25,22 @@ class Search extends Component {
   lookup = () => {
     if (this.state.keyword !== "") 
     {
-      this.props.setKeyword(this.state.keyword); this.props.history.push("/search");
+      this.props.setKeyword(this.state.keyword); 
+
+      if (this.props.location.pathname === '/search') 
+      {
+        this.props.history.replace(`/`);
+        setTimeout(() => 
+        {
+          this.props.history.push("/search");
+        });
+      }       
+      else 
+      {
+        this.props.history.push("/search");
+      }
+
+
     }
   };
 

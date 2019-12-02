@@ -12,6 +12,19 @@ export const searchKeywordSuccess = (articles,total,maxPageCount) =>
     }
 }
 
+export const searchFreshKeywordSuccess = (articles,total,maxPageCount) =>
+{
+    //console.log('1234');
+    
+    return {
+        type:actionTypes.SEARCH_FRESH_KEYWORD_SUCCESS,
+        articles,
+        total,
+        maxPageCount
+    }
+}
+
+
 
 export const searchKeywordFail = () =>
 {
@@ -40,7 +53,7 @@ export const setKeyword = (keyword) =>
 }
 
 
-export const searchKeyword = (keyword,alreadyLoaded=false) =>
+export const searchKeyword = (keyword,alreadyLoaded=false,isNewKeyword=true) =>
 {
     const query = keyword.toString().trim();
     return dispatch =>
@@ -85,7 +98,16 @@ export const searchKeyword = (keyword,alreadyLoaded=false) =>
     
                         //console.log(res);
 
-                        dispatch(searchKeywordSuccess(articles,total,maxPageCount));
+                        if(isNewKeyword)
+                        {
+                            dispatch(searchFreshKeywordSuccess(articles,total,maxPageCount));
+                        }
+                        else
+                        {
+                            dispatch(searchKeywordSuccess(articles,total,maxPageCount));
+                        }
+
+                       
                     } )
                   .catch(err =>
                     {

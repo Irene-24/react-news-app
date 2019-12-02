@@ -53,7 +53,7 @@ export const setKeyword = (keyword) =>
 }
 
 
-export const searchKeyword = (keyword,alreadyLoaded=false,isNewKeyword=true) =>
+export const searchKeyword = (keyword,page=1,alreadyLoaded=false,isNewKeyword=true) =>
 {
     const query = keyword.toString().trim();
     return dispatch =>
@@ -66,7 +66,7 @@ export const searchKeyword = (keyword,alreadyLoaded=false,isNewKeyword=true) =>
             }  
 
             const q = encodeURIComponent(query);
-            const url = `https://newsapi.org/v2/everything?q=${q}`;
+            const url = `https://newsapi.org/v2/everything?q=${q}&page=${page}`;
 
             fetch(url,
                 {
@@ -91,7 +91,7 @@ export const searchKeyword = (keyword,alreadyLoaded=false,isNewKeyword=true) =>
                 } )   
                 .then( res =>
                     {   
-                        const maxPageCount = Math.ceil(res.totalResults/100)  ;
+                        const maxPageCount = Math.ceil(res.totalResults/20)  ;
 
                         const articles = res.articles;  
                         const total = res.totalResults;

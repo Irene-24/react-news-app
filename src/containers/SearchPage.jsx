@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import NewsPage from "../components/NewsPage/NewsPage";
 import LoadingPage from "../components/LoadingPage/LoadingPage";
-//import LoadMore from "../components/LoadMore/LoadMore";
+import LoadMore from "../components/LoadMore/LoadMore";
 import * as actionCreators from "../store/actions/actionCreators";
 
 class SearchPage extends Component {
@@ -23,7 +23,38 @@ class SearchPage extends Component {
       {
           this.props.searchKeyword(this.props.keyword);        
       }
+
+        const options = 
+      {
+          root: null, 
+          rootMargin: '0px',
+          threshold: 0.7
+      };
+
    
+      this.observer = new IntersectionObserver( this.handleObserver, options );
+      
+      this.observer.observe(this.myRef.current);
+   
+  }
+
+  componentWillUnmount()
+  {
+    this.observer.disconnect();  
+  }
+
+
+  handleObserver = (entities, options) =>
+  {
+    if(this.props.articles.length > 0)
+    {
+        if(entities[0].intersectionRatio >=0.7 && (this.props.page <= this.props.maxPageCount))
+        {
+          console.log(33);
+          this.props.searchKeyword(this.props.keyword, this.props.page, true,false );
+        }
+        
+    }
   }
 
   
@@ -43,7 +74,7 @@ class SearchPage extends Component {
       <>
         {view}
         <div style={{ height: "100px" }} ref={this.myRef}>
-          {/* <LoadMore full={this.props.page > this.props.maxPageCount} /> */}
+          <LoadMore full={this.props.page > this.props.maxPageCount} />
         </div>
       </>
     );
@@ -52,16 +83,18 @@ class SearchPage extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    searchKeyword: keyword => dispatch(actionCreators.searchKeyword(keyword))
+    searchKeyword: (keyword,page=1,alreadyLoaded=false,isNewKeyword=true) => dispatch(actionCreators.searchKeyword(keyword,page,alreadyLoaded,isNewKeyword))
   };
 };
 
 const mapStateToProps = state => {
   return {
     keyword: state.search.keyword,
+    maxPageCount:state.search.maxPageCount,
     loading: state.search.loading,
     total: state.search.total,
-    articles: state.search.list
+    articles: state.search.list,
+    page:state.search.currPage
   };
 };
 

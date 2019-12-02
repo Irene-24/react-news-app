@@ -18,6 +18,7 @@ class Home extends Component
 
     componentDidMount()
     {
+      window.scrollTo(0,0);
         this.props.fetchArticles(this.state.category,this.props.page);
         
         const options = 

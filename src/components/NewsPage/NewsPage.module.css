@@ -13,6 +13,7 @@
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     margin-top: 20px;
     grid-gap: 10px;
+    margin-bottom:80px;
     
 }
 

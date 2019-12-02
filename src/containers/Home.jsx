@@ -1,54 +1,89 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
 import NewsPage from "../components/NewsPage/NewsPage";
+import LoadingPage from "../components/LoadingPage/LoadingPage";
+import LoadMore from "../components/LoadMore/LoadMore";
+import * as actionCreators from "../store/actions/actionCreators";
 
 class Home extends Component
 {
-    //wil remove and use redux when i set it up
-    state = 
+    constructor(props)
+  {
+    super(props);
+    this.myRef = React.createRef();
+    this.state = {
+        category:"general"
+    };
+  }
+
+    componentDidMount()
     {
-        articles : 
-        [
-            {
-                title: "SpaceX successfully completes Crew Dragon engine tests without an explosion - Engadget",
-                url: '/',
-                urlToImage:'/',
-                src:'The Daily Bugle',
-                publishedAt:"2019-11-03T07:40:00Z"
-            },
-            {
-                title: "Chinese state media issues dire warning as Hong Kong protests take dark turn - CNN",
-                url: '/',
-                urlToImage:'/',
-                src:'CNN',
-                publishedAt:"2019-11-11T07:40:00Z"
-            },
-            
-            {
-                title: "SpaceX successfully completes Crew Dragon engine tests without an explosion - Engadget",
-                url: '/',
-                urlToImage:'/',
-                src:'The Daily Bugle',
-                publishedAt:"2019-11-12T07:40:00Z"
-            },
-            {
-                title: "Chinese state media issues dire warning as Hong Kong protests take dark turn - CNN",
-                url: '/',
-                urlToImage:'/',
-                src:'CNN',
-                publishedAt:"2019-11-14T07:40:00Z"
-            }
-        ]
+        this.props.fetchArticles(this.state.category,this.props.page);
         
-        
-    }
-    render()
-    {
-        return (
+        const options = 
+        {
+            root: null, 
+            rootMargin: '0px',
+            threshold: 0.7
+        };
+    
+       
+          this.observer = new IntersectionObserver( this.handleObserver, options );
           
-                <NewsPage title="Top" articles={this.state.articles} />
-        );
+          this.observer.observe(this.myRef.current); 
     }
 
+    componentWillUnmount()
+    {
+      this.observer.disconnect();  
+    }
+
+     
+    handleObserver = entities =>
+    {
+        if(this.props.articles.length > 0)
+        {
+            if(entities[0].intersectionRatio >=0.7 && (this.props.page <= this.props.maxPageCount))
+            {
+            this.props.fetchArticles(this.state.category, this.props.page, true );
+            }
+            
+        }
+    }
+ 
+    render() {
+        const view = this.props.loading ? (
+          <LoadingPage />
+        ) : (
+          <NewsPage isHome title="Top" articles={this.props.articles} />
+        );
+    
+        return (
+          <>        
+            {view} 
+           <div style={{height:"100px"}} ref={this.myRef}>
+             <LoadMore full = {this.props.page > this.props.maxPageCount}  />
+           </div>
+          </>
+        );
+      }
+    }
+
+    const mapDispatchToProps = dispatch => {
+        return {
+          fetchArticles: (category, page,alreadyLoaded=false) =>
+            dispatch(actionCreators.fetchArticles(category, page,alreadyLoaded))
+        };
+      };
+
+const mapStateToProps = state =>
+{
+    return {
+        articles:state.articles.general.list,
+        loading:state.articles.loading,
+        page:state.articles.general.currPage,
+        maxPageCount:state.articles.general.maxPageCount
+    }
 }
 
-export default Home;
+export default connect(mapStateToProps,mapDispatchToProps)(Home);

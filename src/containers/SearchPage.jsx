@@ -1,59 +1,68 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import NewsPage from "../components/NewsPage/NewsPage";
+import LoadingPage from "../components/LoadingPage/LoadingPage";
+//import LoadMore from "../components/LoadMore/LoadMore";
+import * as actionCreators from "../store/actions/actionCreators";
 
-class SearchPage extends Component
-{
-    state = 
-    {
-        count: 5,
-        keyword:"meat",
-        articles : 
-        [
-            {
-                title: "SpaceX successfully completes Crew Dragon engine tests without an explosion - Engadget",
-                url: '/',
-                urlToImage:'/',
-                src:'The Daily Bugle',
-                publishedAt:"2019-11-13T07:40:00Z"
-            },
-            {
-                title: "Chinese state media issues dire warning as Hong Kong protests take dark turn - CNN",
-                url: '/',
-                urlToImage:'/',
-                src:'CNN',
-                publishedAt:"2019-11-11T07:40:00Z"
-            },
-            
-            {
-                title: "SpaceX successfully completes Crew Dragon engine tests without an explosion - Engadget",
-                url: '/',
-                urlToImage:'/',
-                src:'The Daily Bugle',
-                publishedAt:"2019-11-12T07:40:00Z"
-            },
-            {
-                title: "Chinese state media issues dire warning as Hong Kong protests take dark turn - CNN",
-                url: '/',
-                urlToImage:'/',
-                src:'CNN',
-                publishedAt:"2019-11-14T07:40:00Z"
-            }
-        ]
-    }
-    //x =  number of results
-    //meat will be eplaced by query/keyword set in redux store
+class SearchPage extends Component {
+  constructor(props) {
+    super(props);
+    this.myRef = React.createRef();
+  }
 
-    render()
-    {
-        return (
-            <>
-               
-                <NewsPage title={`${this.state.count} results found for`} keyword ={ this.state.keyword }articles={this.state.articles} />
-             
-            </>
-        );
-    }
+  componentDidMount() 
+  {
+    
+      if(this.props.keyword === "")
+      {
+          this.props.history.push('/home');
+      }
+      else
+      {
+          this.props.searchKeyword(this.props.keyword);        
+      }
+   
+  }
 
+  
+
+  render() {
+    const view = this.props.loading ? (
+      <LoadingPage />
+    ) : (
+      <NewsPage
+        title={`${this.props.total} results found for`}
+        keyword={this.props.keyword} isSearch
+        articles={this.props.articles}
+      />
+    );
+
+    return (
+      <>
+        {view}
+        <div style={{ height: "100px" }} ref={this.myRef}>
+          {/* <LoadMore full={this.props.page > this.props.maxPageCount} /> */}
+        </div>
+      </>
+    );
+  }
 }
 
-export default SearchPage;
+const mapDispatchToProps = dispatch => {
+  return {
+    searchKeyword: keyword => dispatch(actionCreators.searchKeyword(keyword))
+  };
+};
+
+const mapStateToProps = state => {
+  return {
+    keyword: state.search.keyword,
+    loading: state.search.loading,
+    total: state.search.total,
+    articles: state.search.list
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(SearchPage));

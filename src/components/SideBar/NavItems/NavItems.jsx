@@ -7,12 +7,13 @@ import Github from "../../../assets/img/github-logo.svg";
 
 const pages =
     [
-        'home', 'health', 'finance', 'sports', 'technology', 'entertainment'
+        'home', 'health', 'business', 'sports', 'technology', 'entertainment'
     ];
 
 
 const NavItems = (props) => {
     const style = props.isOpen ? [ classes.NavWrapper, classes.Visible ].join(" ") : classes.NavWrapper;
+    const toggle = props.toggle;
     return (
         <nav className={style}>
 
@@ -25,6 +26,7 @@ const NavItems = (props) => {
             {
                 pages.map((page, i) => (
                     <NavItem
+                        toggle = {toggle}
                         dest={`/${page}`}
                         key={i}>
                         {page}

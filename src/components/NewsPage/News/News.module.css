@@ -15,6 +15,7 @@
   
     background: var(--light-green);
     height: 150px;    
+    border-bottom: 1px solid var(--grey-brown);
 
 }
 
@@ -35,12 +36,14 @@
     justify-content: space-between ;
     align-content: space-between;
     flex-wrap:wrap;
+    margin-top: -20px;
 
 }
 
 .Publisher,.Date
 {
     background: var(--green);
+    margin-top: 20px;
     color:#fff;
     font-size:0.8rem;
     padding:4px;

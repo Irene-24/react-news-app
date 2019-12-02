@@ -5,19 +5,20 @@ import LoadingPage from "../components/LoadingPage/LoadingPage";
 import LoadMore from "../components/LoadMore/LoadMore";
 import * as actionCreators from "../store/actions/actionCreators";
 
-class Sports extends Component
+class Business extends Component
 {
-
-    constructor(props)
-    {
-      super(props);
-      this.myRef = React.createRef();
-      this.state =
-      {
-          category:"sports"
-      };
-    }
     
+  constructor(props)
+  {
+    super(props);
+    this.myRef = React.createRef();
+    this.state =
+    {
+        category:"business"
+    };
+  }
+  
+
   componentDidMount() 
   {
     this.props.fetchArticles(this.state.category, this.props.page);
@@ -82,14 +83,15 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
+
 const mapStateToProps = state =>
 {
     return {
-        articles:state.articles.sports.list,
+        articles:state.articles.business.list,
         loading:state.articles.loading,
-        page:state.articles.sports.currPage,
-        maxPageCount:state.articles.sports.maxPageCount
+        page: state.articles.business.currPage,
+    maxPageCount:state.articles.business.maxPageCount
     }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Sports);
+export default connect(mapStateToProps,mapDispatchToProps)(Business);

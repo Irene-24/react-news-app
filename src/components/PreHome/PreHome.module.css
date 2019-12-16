@@ -1,0 +1,50 @@
+
+.Container
+{
+    margin-top:40px;
+    padding:20px;
+}
+
+
+.Carousel,.Currency_Weather
+{
+  margin-top:20px;
+}
+
+@media screen and  (min-width:768px)
+{
+    .Container
+    {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: 7fr 5fr;
+        justify-content:space-around
+    }   
+
+    .Carousel,.Currency_Weather
+    {
+      margin-top:0px;
+    }
+        
+   
+}
+
+@media  (min-width:768px) and (max-width:991px)
+{
+    .Container
+    {
+        padding-left: 5%;
+    }
+
+}
+
+@media (min-width:993px)
+{
+    .Container
+    {
+       margin-left:320px;
+    }
+
+}
+
+

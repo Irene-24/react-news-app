@@ -1,12 +1,16 @@
 import React from 'react';
-import classes from './urrency.module.css';
+import classes from './Currency.module.css';
 
 const currency = props =>
 {
 
     return <div className={classes.Converter}>
 
-        hello
+       <h3 className={classes.Converter_Header}>Currency Coverter</h3>
+
+       <div className={classes.Converter_Grid}>
+
+       </div>
 
     </div>
 

@@ -1,0 +1,20 @@
+.Converter
+{
+    border: 1px solid #000;
+    background: #fff;
+}
+
+.Converter_Header
+{
+    color:#fff;
+    background: var(--green);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+
+
+.Converter_Grid
+{
+    
+
+}

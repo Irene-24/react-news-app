@@ -3,18 +3,19 @@ import { connect } from "react-redux";
 import NewsPage from "../components/NewsPage/NewsPage";
 import LoadingPage from "../components/LoadingPage/LoadingPage";
 import LoadMore from "../components/LoadMore/LoadMore";
+import PreHome from "../components/PreHome/PreHome";
 import * as actionCreators from "../store/actions/actionCreators";
 
 class Home extends Component
 {
     constructor(props)
-  {
-    super(props);
-    this.myRef = React.createRef();
-    this.state = {
-        category:"general"
-    };
-  }
+    {
+      super(props);
+      this.myRef = React.createRef();
+      this.state = {
+          category:"general"
+      };
+    }
 
     componentDidMount()
     {
@@ -61,7 +62,8 @@ class Home extends Component
     
         return (
           <>  
-                
+
+             <PreHome />   
             {view} 
            <div style={{height:"100px"}} ref={this.myRef}>
              <LoadMore full = {this.props.page > this.props.maxPageCount}  />

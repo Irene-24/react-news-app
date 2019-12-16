@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@brainhubeu/react-carousel": "^1.10.27",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-redux": "^5.1.1",

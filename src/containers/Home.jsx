@@ -60,7 +60,8 @@ class Home extends Component
         );
     
         return (
-          <>        
+          <>  
+                
             {view} 
            <div style={{height:"100px"}} ref={this.myRef}>
              <LoadMore full = {this.props.page > this.props.maxPageCount}  />
@@ -70,12 +71,13 @@ class Home extends Component
       }
     }
 
-    const mapDispatchToProps = dispatch => {
-        return {
-          fetchArticles: (category, page,alreadyLoaded=false) =>
-            dispatch(actionCreators.fetchArticles(category, page,alreadyLoaded))
-        };
-      };
+const mapDispatchToProps = dispatch => 
+{
+    return {
+      fetchArticles: (category, page,alreadyLoaded=false) =>
+        dispatch(actionCreators.fetchArticles(category, page,alreadyLoaded))
+    };
+};
 
 const mapStateToProps = state =>
 {

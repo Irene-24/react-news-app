@@ -5,6 +5,14 @@ import classes from "./Currency.module.css";
 
 const currency = (props) => 
 {
+    const options = [];
+    for (const countryCode in props.options) 
+    {
+        const option = { countryCode,...props.options[countryCode] };
+        options.push(option);
+    }
+
+   
 
     return (
       <div className={classes.Converter}>
@@ -15,21 +23,28 @@ const currency = (props) =>
             <label htmlFor="source"> Select source </label>
 
             <select onChange={props.pickCurrency} id="source">
-              <option value="">Select source currency</option>
-              <option value="">h</option>
-              <option value="">a</option>
-              <option value="">v</option>
-              <option value="">e</option>
+              <option value=""> Select source currency</option>
+              {
+                options.map( opt => 
+                    {
+                return <option key={opt.currencyName} value={opt.countryCode}> {opt.currencyName}  { `( ${opt.currencySymbol} )` }</option> 
+                    } )
+              }
+
             </select>
 
             <label htmlFor="target"> Select target </label>
 
             <select onChange={props.pickCurrency} id="target">
               <option value="">Select target currency</option>
-              <option value="">m</option>
-              <option value="">e</option>
-              <option value="">a</option>
-              <option value="">t</option>
+
+              {
+                options.map( opt => 
+                    {
+                return <option key={opt.currencyName} value={opt.countryCode}> {opt.currencyName}  { `( ${opt.currencySymbol} )` }</option> 
+                    } )
+              }
+             
             </select>
 
             <label htmlFor="amt"> Enter amount </label>
@@ -46,8 +61,13 @@ const currency = (props) =>
           <div className={classes.Display}>
 
             <div className={classes.Currency}>
-              <p className={classes.Value}>100</p>
-              <p className={classes.Symbol}>#</p>
+              <p className={classes.Value}>{props.sourceVal}</p>
+              <p className={classes.Symbol}>
+              {
+                      props.source !== "" ? 
+                      props.options[props.source].currencySymbol : '#'
+                  }
+              </p>
             </div>
 
             <div className={classes.Convert_Icon}>
@@ -57,8 +77,13 @@ const currency = (props) =>
             </div>
 
             <div className={classes.Currency}>
-              <p className={classes.Value}>100</p>
-              <p className={classes.Symbol}>#</p>
+              <p className={classes.Value}>{props.targetVal}</p>
+              <p className={classes.Symbol}>
+                  {
+                      props.target !== "" ? 
+                      props.options[props.target].currencySymbol : '#'
+                  }
+              </p>
             </div>
 
           </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./PreHome.module.css";
-import Currency from "../Currency/Currency";
+import ConvCurrency from "../../containers/ConvCurrency";
 
 const preHome = props => {
   return (
@@ -23,7 +23,7 @@ const preHome = props => {
       </div>
 
       <div className={classes.Currency_Weather}>
-        <Currency />
+        <ConvCurrency />
       </div>
       
     </div>

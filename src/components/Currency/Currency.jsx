@@ -14,7 +14,7 @@ const currency = (props) =>
     }
 
     options.sort((a,b) => a.currencyName > b.currencyName ?1 : -1);   
-    
+
 
     return (
       <div className={classes.Converter}>
@@ -54,6 +54,7 @@ const currency = (props) =>
             <input
               value={props.amount}
               onChange={props.inputHandler}
+              onKeyUp={props.pressedEnter}
               type="number"
               id="amt"
             />

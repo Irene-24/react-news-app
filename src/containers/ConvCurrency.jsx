@@ -31,14 +31,28 @@ class ConvCurrency extends Component
 
         return targetValue;
     }
+
+    pressedEnter = event =>
+    {
+        event.preventDefault();
+
+        if (event.keyCode === 13) 
+        {
+          this.convertCurrency();
+        }
+    }
     
     convertCurrency = () =>
     {
-        const source_Value = (+this.state.amount).toFixed(4);
+        if(this.state.source && this.state.target)
+        {
+            const source_Value = (+this.state.amount).toFixed(4);
         
-        const target_Value = this.convFromEur(this.state.amount).toFixed(4);        
-
-        this.setState({source_Value,target_Value});
+            const target_Value = this.convFromEur(this.state.amount).toFixed(4);        
+    
+            this.setState({source_Value,target_Value});
+        }
+       
     }
 
     pickCurrency = event =>
@@ -89,6 +103,7 @@ class ConvCurrency extends Component
         target={this.state.target}
         source={this.state.source}
         options={this.state.options}
+        pressedEnter = {this.pressedEnter}
         pickCurrency = {this.pickCurrency}
         convertCurrency = {this.convertCurrency}
         inputHandler = {this.inputHandler} />

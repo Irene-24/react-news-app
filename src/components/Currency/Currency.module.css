@@ -16,8 +16,6 @@
 
 .Converter_Grid
 {
-    
-    margin-top: 20px;
     padding:10px;
 }
 
@@ -55,6 +53,7 @@
 .Inputs input
 {
     border-radius: 4px;
+    max-width:100%;
     outline: none;
     padding:4px;
     font-size: 15px;
@@ -149,7 +148,7 @@
     .Converter_Grid
     {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
         grid-gap: 10px;
     }
 

@@ -6,13 +6,15 @@ import classes from "./Currency.module.css";
 const currency = (props) => 
 {
     const options = [];
+    // eslint-disable-next-line no-unused-vars
     for (const countryCode in props.options) 
     {
         const option = { countryCode,...props.options[countryCode] };
         options.push(option);
     }
 
-   
+    options.sort((a,b) => a.currencyName > b.currencyName ?1 : -1);   
+    
 
     return (
       <div className={classes.Converter}>

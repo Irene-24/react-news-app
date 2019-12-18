@@ -62,6 +62,7 @@
 .Inputs option
 {
     font-size: 15px;
+    text-transform:capitalize;
 }
 
 .Convert_Btn
@@ -109,7 +110,7 @@
 
 .Value
 {
-    font-size:1.05em;
+    font-size:0.98em;
 }
 
 .Symbol

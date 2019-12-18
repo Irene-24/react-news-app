@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Currency from "../components/Currency/Currency";
 
+
+
+
 class ConvCurrency extends Component
 {
     state = 
@@ -9,7 +12,7 @@ class ConvCurrency extends Component
         source: "",
         target_Value: "XX.XX",
         source_Value: "XX.XX",
-        amount: "",
+        amount: 1.00,
         options:null,
         rates:null
       };
@@ -19,10 +22,23 @@ class ConvCurrency extends Component
       event.preventDefault();
       this.setState({ amount: event.target.value });
     }; 
+
+    convFromEur = (amt) =>
+    {
+        const sourceCurrencyInEuro = (+amt)/(+this.state.rates[this.state.source]);
+
+        const targetValue = sourceCurrencyInEuro*(+this.state.rates[this.state.target]);
+
+        return targetValue;
+    }
     
     convertCurrency = () =>
     {
-        console.log('converted');
+        const source_Value = (+this.state.amount).toFixed(4);
+        
+        const target_Value = this.convFromEur(this.state.amount).toFixed(4);        
+
+        this.setState({source_Value,target_Value});
     }
 
     pickCurrency = event =>
@@ -30,11 +46,11 @@ class ConvCurrency extends Component
         
         if(event.target.id === "target")
         {
-            console.log('target');
+            this.setState({target:event.target.value});
         }
         else
         {
-            console.log('source');
+            this.setState({source:event.target.value});
         }
     }
    
@@ -49,14 +65,19 @@ class ConvCurrency extends Component
             })
         .catch(err => console.log(err));
 
+       const url = `http://data.fixer.io/api/latest?access_key=${process.env.REACT_APP_CURRENCY_KEY}&format=1`;
+
+       fetch(url)
+       .then(res => res.json())
+       .then( res =>
+        {
+           
+            this.setState({ rates:res.rates })
+        } )
+        .catch(err => console.log(err));
+
     }
 
-    componentWillUnmount()
-    {
-       
-    }
-
-     
     
  
     render() 

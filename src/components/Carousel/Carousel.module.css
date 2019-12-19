@@ -1,12 +1,35 @@
-.Carousel
+.Adjusted_Slider
 {
-    margin-left:35vw;
-    width:300px;
-    height:300px;
+    position: relative;
 }
 
-.Carousel img
+.Adjusted_Slider,
+.Adjusted_Slider > div,
+.Adjusted_Slider > div > div,
+.Adjusted_Slider > div > div > div,
+.Adjusted_Slider > div > div > div > div,
+.Adjusted_Slider > div > div > div > div > div
 {
-    width:100%;
-    height:100%;
+   max-height: 100% !important;
+   height:100% !important;
+}
+
+.Adjusted_Slider button
+{
+   top:unset;
+   left:unset;
+   right:45px;
+   bottom:0;
+   z-index:100;
+}
+
+.Adjusted_Slider button:nth-of-type(2)
+{
+   
+   right:15px;
+}
+
+.Adjusted_Slider button::before
+{
+    color: var(--green);
 }

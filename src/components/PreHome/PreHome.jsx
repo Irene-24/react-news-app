@@ -1,5 +1,6 @@
 import React from "react";
 import classes from "./PreHome.module.css";
+import Carousel from "../Carousel/Carousel";
 import ConvCurrency from "../../containers/ConvCurrency";
 
 const preHome = props => {
@@ -9,6 +10,7 @@ const preHome = props => {
       
       <div className={classes.Carousel}>      
     
+         <Carousel articles={props.articles} />
 
      
       </div>

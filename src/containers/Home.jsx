@@ -57,13 +57,16 @@ class Home extends Component
         const view = this.props.loading ? (
           <LoadingPage />
         ) : (
+          <>
+          <PreHome articles={this.props.articles.slice(2,8)} /> 
           <NewsPage isHome title="Top" articles={this.props.articles} />
+          </>
         );
     
         return (
           <>  
 
-             <PreHome />   
+              
             {view} 
            <div style={{height:"100px"}} ref={this.myRef}>
              <LoadMore full = {this.props.page > this.props.maxPageCount}  />

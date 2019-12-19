@@ -6,6 +6,7 @@ import Currency from "../components/Currency/Currency";
 
 class ConvCurrency extends Component
 {
+    _isMounted = false;
     state = 
     {
         target: "",
@@ -20,7 +21,10 @@ class ConvCurrency extends Component
     inputHandler = event => 
     {
       event.preventDefault();
-      this.setState({ amount: event.target.value });
+      
+     
+        this.setState({ amount: event.target.value });
+    
     }; 
 
     convFromEur = (amt) =>
@@ -48,9 +52,11 @@ class ConvCurrency extends Component
         {
             const source_Value = (+this.state.amount).toFixed(4);
         
-            const target_Value = this.convFromEur(this.state.amount).toFixed(4);        
-    
-            this.setState({source_Value,target_Value});
+            const target_Value = this.convFromEur(this.state.amount).toFixed(4);  
+            
+          this.setState({source_Value,target_Value});
+         
+
         }
        
     }
@@ -70,12 +76,16 @@ class ConvCurrency extends Component
    
     componentDidMount()
     {
-
+        this._isMounted = true;
         fetch('./currency-country.json')
         .then(res => res.json())
         .then(res => 
             {
-                this.setState( {options:res} )
+                if(this._isMounted)
+                {
+                    this.setState( {options:res} )
+                }
+              
             })
         .catch(err => console.log(err));
 
@@ -85,12 +95,20 @@ class ConvCurrency extends Component
        .then(res => res.json())
        .then( res =>
         {
+            if(this._isMounted)
+            {
+                this.setState({ rates:res.rates });
+            }
            
-            this.setState({ rates:res.rates })
+           
         } )
         .catch(err => console.log(err));
 
     }
+
+    componentWillUnmount() {
+        this._isMounted = false;
+      }
 
     
  

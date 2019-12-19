@@ -1,0 +1,25 @@
+.Slide
+{
+    height:100%;
+    width:100%;
+    position: relative;
+}
+
+.Slide img
+{
+   
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+
+.Slide_Header
+{
+    background-color: var(--green);
+    color:#fff;
+    position: absolute;
+    left: 10px;
+    bottom:20px;
+    padding:5px;
+    font-size:12px;
+}

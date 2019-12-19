@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import classes from "./CarouselItem.module.css";
 import placeholder from "../../../assets/img/logo light.svg";
 
@@ -22,9 +23,16 @@ const carouselItem = (props) =>
    }
 
    return <div className={classes.Slide}>
-   <p className={classes.Slide_Header}>
+
+    <NavLink
+                    to={ props.dest  }
+                    target="_blank"
+                    className={classes.Slide_Header}>
+                    {capitalizeFirst(props.text)} &nbsp;&nbsp; <i className="fas fa-external-link-alt"></i>
+    </NavLink>    
+   {/* <p className={classes.Slide_Header}>
       {capitalizeFirst(props.text)}
-   </p>
+   </p> */}
    <img src={image} alt={alt}/>  
    </div>;
 };

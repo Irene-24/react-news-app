@@ -19,7 +19,7 @@ const simpleSlider = props =>
     };
 
     const view = props.articles.length > 0 ? 
-    props.articles.map( (article,i) => <CarouselItem key={i} image={article.urlToImage} text={article.title} /> ) : null;
+    props.articles.map( (article,i) => <CarouselItem key={i} image={article.urlToImage} dest={article.url} text={article.title} /> ) : null;
 
     
     return (

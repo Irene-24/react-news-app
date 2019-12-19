@@ -24,15 +24,13 @@ const carouselItem = (props) =>
 
    return <div className={classes.Slide}>
 
-    <NavLink
-                    to={ props.dest  }
+    <a rel="noopener noreferrer"
+                    href={ props.dest  }
                     target="_blank"
                     className={classes.Slide_Header}>
                     {capitalizeFirst(props.text)} &nbsp;&nbsp; <i className="fas fa-external-link-alt"></i>
-    </NavLink>    
-   {/* <p className={classes.Slide_Header}>
-      {capitalizeFirst(props.text)}
-   </p> */}
+    </a>    
+  
    <img src={image} alt={alt}/>  
    </div>;
 };

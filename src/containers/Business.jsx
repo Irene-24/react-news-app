@@ -19,6 +19,11 @@ class Business extends Component
   }
   
 
+  retry = () =>
+  {    
+    this.props.fetchArticles(this.state.category,this.props.page);
+  }
+
   componentDidMount() 
   {
     window.scrollTo(0,0);
@@ -59,23 +64,26 @@ class Business extends Component
     }
   }
 
-  render() {
-    const view = this.props.loading ? (
-      <LoadingPage />
-    ) : (
-      <NewsPage title={this.state.category} articles={this.props.articles} />
-    );
 
-    return (
-      <>        
-        {view} 
-       <div style={{height:"100px"}} ref={this.myRef}>
-         <LoadMore full = {this.props.page > this.props.maxPageCount}  />
-       </div>
-      </>
-    );
-  }
-}
+  render() {
+
+    const view = <NewsPage title={this.state.category} articles={this.props.articles} />;
+
+     const total_view = this.props.loading ? ( this.props.articles.length > 0 ? view :
+       <LoadingPage />
+     ) :view ;
+ 
+     return (
+       <>                
+         {total_view} 
+        <div style={{height:"100px"}} ref={this.myRef}>
+          <LoadMore reload={this.retry} error={this.props.error} full={this.props.page > this.props.maxPageCount} />
+        </div>
+       </>
+     );
+   }
+ }
+ 
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -91,6 +99,7 @@ const mapStateToProps = state =>
         articles:state.articles.business.list,
         loading:state.articles.loading,
         page: state.articles.business.currPage,
+        error:state.articles.error,
     maxPageCount:state.articles.business.maxPageCount
     }
 }

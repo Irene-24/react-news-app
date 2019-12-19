@@ -15,6 +15,11 @@ class Technology extends Component {
       category: "technology"
     };
   }
+
+  retry = () =>
+  {    
+    this.props.fetchArticles(this.state.category,this.props.page);
+  }
   
 
   componentDidMount() 
@@ -58,22 +63,23 @@ class Technology extends Component {
   }
 
   render() {
-    const view = this.props.loading ? (
-      <LoadingPage />
-    ) : (
-      <NewsPage title={this.state.category} articles={this.props.articles} />
-    );
 
-    return (
-      <>        
-        {view} 
-       <div style={{height:"100px"}} ref={this.myRef}>
-         <LoadMore full = {this.props.page > this.props.maxPageCount}  />
-       </div>
-      </>
-    );
-  }
-}
+    const view = <NewsPage title={this.state.category} articles={this.props.articles} />;
+
+     const total_view = this.props.loading ? ( this.props.articles.length > 0 ? view :
+       <LoadingPage />
+     ) :view ;
+ 
+     return (
+       <>                
+         {total_view} 
+        <div style={{height:"100px"}} ref={this.myRef}>
+          <LoadMore reload={this.retry} error={this.props.error} full={this.props.page > this.props.maxPageCount} />
+        </div>
+       </>
+     );
+   }
+ }
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -86,7 +92,7 @@ const mapStateToProps = state => {
   return {
     articles: state.articles.technology.list,
     loading: state.articles.loading,
-    page: state.articles.technology.currPage,
+    page: state.articles.technology.currPage,error:state.articles.error,
     maxPageCount:state.articles.technology.maxPageCount
   };
 };

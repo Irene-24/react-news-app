@@ -30,7 +30,8 @@ const searchFreshKeywordSuccess = (articles,total,maxPageCount,state) =>
         list:articles,
         maxPageCount,
         total,         
-        loading:false
+        loading:false,
+        error:false
     });
 
 }
@@ -48,12 +49,12 @@ const searchKeywordSuccess= (articles,total,maxPageCount,state) =>
 
     }
 
-    return updateObject(state,{loading:false});
+    return updateObject(state,{loading:false,error:false});
 };
 
 const searchKeywordFail = (state) =>
 {   
-  return updateObject(state,{loading:false});
+  return updateObject(state,{loading:false,error:true});
 };
 
 

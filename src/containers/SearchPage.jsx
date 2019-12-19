@@ -44,6 +44,11 @@ class SearchPage extends Component {
     this.observer.disconnect();  
   }
 
+  retry = () =>
+  {    
+    this.props.searchKeyword(this.props.keyword)
+  }
+
 
   handleObserver = (entities, options) =>
   {
@@ -51,7 +56,6 @@ class SearchPage extends Component {
     {
         if(entities[0].intersectionRatio >=0.7 && (this.props.page <= this.props.maxPageCount))
         {
-          console.log(33);
           this.props.searchKeyword(this.props.keyword, this.props.page, true,false );
         }
         
@@ -75,7 +79,7 @@ class SearchPage extends Component {
       <>
         {view}
         <div style={{ height: "100px" }} ref={this.myRef}>
-          <LoadMore full={this.props.page > this.props.maxPageCount} />
+          <LoadMore reload={this.retry} error={this.props.error} full={this.props.page > this.props.maxPageCount} />
         </div>
       </>
     );
@@ -95,7 +99,8 @@ const mapStateToProps = state => {
     loading: state.search.loading,
     total: state.search.total,
     articles: state.search.list,
-    page:state.search.currPage
+    page:state.search.currPage,
+    error:state.search.error
   };
 };
 

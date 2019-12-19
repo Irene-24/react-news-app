@@ -1,0 +1,36 @@
+.Retry
+{    
+    margin-top: 20px;
+    grid-gap: 10px;
+    font-size: 20px;
+}
+
+.Retry button
+{
+    color: #fff;
+    border:none;
+    background-color: var(--green);
+    border-radius: 4px;
+    display:inline-block;
+    padding:8px 20px;
+    margin:10px auto;
+    cursor: pointer;
+}
+
+@media  (min-width:768px) and (max-width:991px)
+{
+    .Retry
+    {
+        padding-left: 5%;
+    }
+
+}
+
+@media (min-width:993px)
+{
+    .Retry
+    {
+       margin-left:320px;
+    }
+
+}

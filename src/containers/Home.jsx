@@ -40,6 +40,11 @@ class Home extends Component
       this.observer.disconnect();  
     }
 
+    retry = () =>
+    {    
+      this.props.fetchArticles(this.state.category,this.props.page);
+    }
+
      
     handleObserver = entities =>
     {
@@ -54,22 +59,21 @@ class Home extends Component
     }
  
     render() {
-        const view = this.props.loading ? (
+
+       const view = <>
+       <PreHome articles={this.props.articles.slice(2,8)} /> 
+       <NewsPage isHome title="Top" articles={this.props.articles} />
+       </>;
+
+        const total_view = this.props.loading ? ( this.props.articles.length > 0 ? view :
           <LoadingPage />
-        ) : (
-          <>
-          <PreHome articles={this.props.articles.slice(2,8)} /> 
-          <NewsPage isHome title="Top" articles={this.props.articles} />
-          </>
-        );
+        ) :view ;
     
         return (
-          <>  
-
-              
-            {view} 
+          <>                
+            {total_view} 
            <div style={{height:"100px"}} ref={this.myRef}>
-             <LoadMore full = {this.props.page > this.props.maxPageCount}  />
+             <LoadMore reload={this.retry} error={this.props.error} full={this.props.page > this.props.maxPageCount} />
            </div>
           </>
         );
@@ -90,6 +94,7 @@ const mapStateToProps = state =>
         articles:state.articles.general.list,
         loading:state.articles.loading,
         page:state.articles.general.currPage,
+        error:state.articles.error,
         maxPageCount:state.articles.general.maxPageCount
     }
 }

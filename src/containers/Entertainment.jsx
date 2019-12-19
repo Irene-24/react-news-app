@@ -16,6 +16,11 @@ class Entertainment extends Component
           category:"entertainment"
       };
     }
+    retry = () =>
+    {    
+      this.props.fetchArticles(this.state.category,this.props.page);
+    }
+
     
     componentDidMount() 
     {
@@ -58,22 +63,23 @@ class Entertainment extends Component
     }
   
     render() {
-      const view = this.props.loading ? (
-        <LoadingPage />
-      ) : (
-        <NewsPage title={this.state.category} articles={this.props.articles} />
-      );
+
+      const view = <NewsPage title={this.state.category} articles={this.props.articles} />;
   
-      return (
-        <>        
-          {view} 
-         <div style={{height:"100px"}} ref={this.myRef}>
-           <LoadMore full = {this.props.page > this.props.maxPageCount}  />
-         </div>
-        </>
-      );
-    }
-  }
+       const total_view = this.props.loading ? ( this.props.articles.length > 0 ? view :
+         <LoadingPage />
+       ) :view ;
+   
+       return (
+         <>                
+           {total_view} 
+          <div style={{height:"100px"}} ref={this.myRef}>
+            <LoadMore reload={this.retry} error={this.props.error} full={this.props.page > this.props.maxPageCount} />
+          </div>
+         </>
+       );
+     }
+   }
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -87,7 +93,8 @@ const mapDispatchToProps = dispatch => {
       articles: state.articles.entertainment.list,
       loading: state.articles.loading,
       page: state.articles.entertainment.currPage,
-      maxPageCount:state.articles.entertainment.maxPageCount
+      maxPageCount:state.articles.entertainment.maxPageCount,
+      error:state.articles.error
     };
   };
 

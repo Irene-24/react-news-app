@@ -12,9 +12,7 @@ const carouselItem = (props) =>
    if( props.image )
    {
        image =  props.image;
-       alt ="news headline pic"
-
-       console.log(image);
+       alt ="news headline pic";
        
    }
    else

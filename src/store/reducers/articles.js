@@ -4,6 +4,7 @@ import { updateObject } from "../utils";
 const initialState =
 {
     loading:false,
+    error:false,
     health: {
         currPage:1,
         maxPageCount:1,
@@ -52,7 +53,7 @@ const fetchArticlesSuccess = (category,articles,maxPageCount,state) =>
     }
 
 
-    return updateObject(state,{loading:false});
+    return updateObject(state,{loading:false,error:false});
 };
 
 const fetchArticlesStart = (state) =>
@@ -64,7 +65,7 @@ const fetchArticlesFail = (state) =>
 {
     
     
-    return updateObject(state,{loading:false})
+    return updateObject(state,{loading:false,error:true})
 };
 
 const reducer = (state = initialState, action) => 

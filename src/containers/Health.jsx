@@ -38,6 +38,11 @@ class Health extends Component
       
     }
 
+    retry = () =>
+    {    
+      this.props.fetchArticles(this.state.category,this.props.page);
+    }
+
     
 
   componentWillUnmount()
@@ -59,22 +64,23 @@ class Health extends Component
   }
     
   render() {
-    const view = this.props.loading ? (
-      <LoadingPage />
-    ) : (
-      <NewsPage title={this.state.category} articles={this.props.articles} />
-    );
 
-    return (
-      <>        
-        {view} 
-       <div style={{height:"100px"}} ref={this.myRef}>
-         <LoadMore full = {this.props.page > this.props.maxPageCount}  />
-       </div>
-      </>
-    );
-  }
-}
+    const view = <NewsPage title={this.state.category} articles={this.props.articles} />;
+
+     const total_view = this.props.loading ? ( this.props.articles.length > 0 ? view :
+       <LoadingPage />
+     ) :view ;
+ 
+     return (
+       <>                
+         {total_view} 
+        <div style={{height:"100px"}} ref={this.myRef}>
+          <LoadMore reload={this.retry} error={this.props.error} full={this.props.page > this.props.maxPageCount} />
+        </div>
+       </>
+     );
+   }
+ }
 
 
 const mapDispatchToProps = dispatch => {
@@ -88,7 +94,8 @@ const mapStateToProps = state =>
 {
     return {
         articles:state.articles.health.list,
-        loading:state.articles.loading,
+        loading:state.articles.loading, 
+        error:state.articles.error,
         page:state.articles.health.currPage,
         maxPageCount:state.articles.health.maxPageCount
     }

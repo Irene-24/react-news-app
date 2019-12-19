@@ -52,8 +52,14 @@ const stripSrc = (title) =>
      return `${title.substring(0,indexOfDash).trim()}.`;
 }
 
+const capitalizeFirst = (title) =>
+{
+    const first = title[0].toUpperCase();
+    return first+title.substring(1);
+}
 export 
 {
   stripSrc,
-  formatDate
+  formatDate,
+  capitalizeFirst
 };

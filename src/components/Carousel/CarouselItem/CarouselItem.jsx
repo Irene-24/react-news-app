@@ -2,14 +2,20 @@ import React from "react";
 import classes from "./CarouselItem.module.css";
 import placeholder from "../../../assets/img/logo light.svg";
 
+import { capitalizeFirst } from "../../../assets/utils";
+
 const carouselItem = (props) =>
 {
    let image =null ;
+   let alt = null;
 
-   if( props.image !== "" )
+   if( props.image )
    {
        image =  props.image;
        alt ="news headline pic"
+
+       console.log(image);
+       
    }
    else
    {
@@ -18,10 +24,10 @@ const carouselItem = (props) =>
    }
 
    return <div className={classes.Slide}>
-   <div className={classes.Slide_Header}>
-      {props.text}
-   </div>
-   <img src={image} alt="news article pic"/>  
+   <p className={classes.Slide_Header}>
+      {capitalizeFirst(props.text)}
+   </p>
+   <img src={image} alt={alt}/>  
    </div>;
 };
 

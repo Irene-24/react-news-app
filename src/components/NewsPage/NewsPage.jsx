@@ -2,12 +2,8 @@ import React from "react";
 import News from "./News/News";
 // import Carousel from "../Carousel/Carousel";
 import classes from "./NewsPage.module.css";
+import { capitalizeFirst } from "../../assets/utils";
 
-const capitalizeFirst = (title) =>
-{
-    const first = title[0].toUpperCase();
-    return first+title.substring(1);
-}
 
 const newsPage = props => {
   const header = props.keyword ? (

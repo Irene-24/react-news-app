@@ -3,13 +3,13 @@
     border: 1px solid var(--green) ;    
     border-radius: 50px;    
     width:30vw;
-    min-width:280px;
+    min-width:315px;
     max-width:350px;
     position: fixed;
     right:50%;
     top: 64px;
     transform: translateX(50%);
-    font-size: 20px ;
+    font-size: 18px ;
     padding: 8px 4px 8px 45px;
     background: #fff;
     z-index:60;

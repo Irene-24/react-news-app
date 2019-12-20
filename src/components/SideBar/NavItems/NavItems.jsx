@@ -35,8 +35,8 @@ const NavItems = (props) => {
             }
 
             <div className={classes.Social}>
-                <a href="http://" target="_blank" rel="noopener noreferrer">  <img src={Github}  alt="logo of github"/> </a>
-                <a href="http://" target="_blank" rel="noopener noreferrer">  <img src={Twitter} alt="logo of twitter" /></a>
+                <a href="https://github.com/Irene-24/react-news-app" target="_blank" rel="noopener noreferrer">  <img src={Github}  alt="logo of link to github"/> </a>
+                <a href="https://twitter.com/okafor_irene" target="_blank" rel="noopener noreferrer">  <img src={Twitter} alt="logo of link to twitter" /></a>
                         
               
             </div>

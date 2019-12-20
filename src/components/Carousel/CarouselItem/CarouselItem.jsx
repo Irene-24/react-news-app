@@ -1,5 +1,4 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import classes from "./CarouselItem.module.css";
 import placeholder from "../../../assets/img/logo light.svg";
 

@@ -15,7 +15,8 @@ class ConvCurrency extends Component
         source_Value: "XX.XX",
         amount: 1.00,
         options:null,
-        rates:null
+        rates:null,
+        error:false
       };
 
     inputHandler = event => 
@@ -97,12 +98,15 @@ class ConvCurrency extends Component
         {
             if(this._isMounted)
             {
-                this.setState({ rates:res.rates });
+                this.setState({ rates:res.rates,error:false });
             }
            
            
         } )
-        .catch(err => console.log(err));
+        .catch( () =>
+        {
+            this.setState({error:true})
+        });
 
     }
 
@@ -122,6 +126,7 @@ class ConvCurrency extends Component
         source={this.state.source}
         options={this.state.options}
         pressedEnter = {this.pressedEnter}
+        error={this.state.error}
         pickCurrency = {this.pickCurrency}
         convertCurrency = {this.convertCurrency}
         inputHandler = {this.inputHandler} />

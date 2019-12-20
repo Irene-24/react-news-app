@@ -77,7 +77,7 @@ const currency = props => {
           
         </div>
         <div className={classes.Display}>
-          <div className={classes.Currency}>
+          { props.error ? <p>Ooops, there was error retrieving the currency information, try refreshing the page.</p>  : <> <div className={classes.Currency}>
             <p className={classes.Value}>{props.sourceVal}</p>
             <p className={classes.Symbol}>
               {props.source !== ""
@@ -108,6 +108,8 @@ const currency = props => {
                 : "#"}
             </p>
           </div>
+      </> }
+         
         </div>
       </div>
     </div>

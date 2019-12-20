@@ -21,6 +21,7 @@ const news = (props) =>
         image = placeholder;
         alt ="loudspeaker placeholder pic";
     }
+
  
     return (
         <div className={classes.NewsCard}>

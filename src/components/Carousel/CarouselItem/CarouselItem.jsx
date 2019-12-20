@@ -21,6 +21,8 @@ const carouselItem = (props) =>
        alt ="loudspeaker placeholder pic";
    }
 
+   const style = alt === "loudspeaker placeholder pic" ? classes.PlaceHolder : null ;
+
    return <div className={classes.Slide}>
 
     <a rel="noopener noreferrer"
@@ -30,7 +32,7 @@ const carouselItem = (props) =>
                     {capitalizeFirst(props.text)} &nbsp;&nbsp; <i className="fas fa-external-link-alt"></i>
     </a>    
   
-   <img src={image} alt={alt}/>  
+   <img className={style} src={image} alt={alt}/>  
    </div>;
 };
 

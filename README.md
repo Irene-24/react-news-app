@@ -20,26 +20,35 @@ The live site can be viewed [here](http://my-news-app.surge.sh)
 
 ### How to use this repo
 
-1 Star the repository
+1. Star the repository 🌟
 
-2 Fork the repository
+2. Fork the repository
 
-3 Clone to your local machine
+3. Clone to your local machine
 
-4 Head over to [newsapi.org](https://newsapi.org/) and get your API key
+4. Head over to [newsapi.org](https://newsapi.org/) and get your API key
 
-5 Go to [fixer.io](https://fixer.io/product) and obtain your key
+5. Go to [fixer.io](https://fixer.io/product) and obtain your key
 
-6 Create a .env file in the root of the repository and insert the following
-> REACT_APP_API_KEY="[YOUR NEWS API KEY]"
+6. Create a .env file in the root of the repository and insert the following
 
->REACT_APP_CURRENCY_KEY="[YOUR FIXER API KEY]"
+````
+REACT_APP_API_KEY="[YOUR NEWS API KEY]"
 
-7 Save and in your terminal run 
+REACT_APP_CURRENCY_KEY="[YOUR FIXER API KEY]"
+
+
+````
+
+
+7. Save, and then in your terminal run 
 
 > npm start
 
-8 Have fun coding
+in the root directory.
+
+
+8. Have fun coding 💻
 
 
 

@@ -32,6 +32,7 @@ The live site can be viewed [here](http://my-news-app.surge.sh)
 
 6 Create a .env file in the root of the repository and insert the following
 > REACT_APP_API_KEY="[YOUR NEWS API KEY]"
+
 >REACT_APP_CURRENCY_KEY="[YOUR FIXER API KEY]"
 
 7 Save and in your terminal run 

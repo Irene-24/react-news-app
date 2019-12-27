@@ -13,6 +13,8 @@ The live site can be viewed [here](http://my-news-app.surge.sh)
 
 ### Features
 * Routing
+* Redux
+* Code Splitting 
 * Infinite Scrolling
 * Searching
 * Currency Conversion

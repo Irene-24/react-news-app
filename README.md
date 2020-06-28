@@ -6,10 +6,9 @@ This repository contains the source code for a news web application that was bui
 ![Image of the site homepage](https://res.cloudinary.com/dm6nbay0f/image/upload/v1577343304/Screenshot_104.png)
 
 
-
-
-
 The live site can be viewed [here](http://my-news-app.surge.sh)
+#### Due to some api restrictions, the live demo will not load in chrome, try using Mozilla Firefox or Safari to view it instead
+
 
 ### Features
 * Routing

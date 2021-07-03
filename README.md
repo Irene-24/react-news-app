@@ -7,7 +7,7 @@ This repository contains the source code for a news web application that was bui
 
 
 The live site can be viewed [here](http://my-news-app.surge.sh)
-#### Due to some api restrictions, the live demo will not load in chrome, try using Mozilla Firefox or Safari to view it instead
+#### Due to some api restrictions, the live demo will not load news articles any more. Watch out for version 2
 
 
 ### Features
